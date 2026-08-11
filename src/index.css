@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-teal: #02b5a5;
+  --color-brand-teal-dark: #019087;
+  --color-brand-brown: #3a2319;
+  --color-brand-brown-mid: #5c3628;
+  --color-brand-gray: #58595b;
+  --color-brand-light: #c1c3c5;
+  --color-brand-cream: #f5f2ee;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #3a2319;
+  margin: 0;
+}
+
+.font-josefin {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.fup {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fup.vis { opacity: 1; transform: none; }
+.d1 { transition-delay: 80ms; }
+.d2 { transition-delay: 180ms; }
+.d3 { transition-delay: 280ms; }
+.d4 { transition-delay: 380ms; }
+.d5 { transition-delay: 480ms; }
+.d6 { transition-delay: 580ms; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f5f2ee; }
+::-webkit-scrollbar-thumb { background: #02b5a5; border-radius: 3px; }

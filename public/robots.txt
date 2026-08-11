@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://morelliengenharia.com.br/sitemap.xml
