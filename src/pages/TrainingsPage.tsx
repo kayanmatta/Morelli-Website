@@ -1,6 +1,35 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AppView } from '../App'
 import { trainingCategories, totalCourses } from '../data/trainings'
+
+// Auto-import all training images
+const allImages = import.meta.glob<{ default: string }>('../imports/treinamentos/*.{png,jpg,jpeg}')
+
+// Map category names to representative image filename keywords
+const categoryImageMap: Record<string, string> = {
+  'NR 1': 'nr1',
+  'NR 5': 'CIPA',
+  'NR 6': 'NR 6',
+  'NR 10': 'NR 10',
+  'NR 13': 'NR 13',
+  'NR 15': 'NR 15',
+  'NR 17': 'NR 17',
+  'NR 20': 'NR20',
+  'NR 23': 'nr23',
+  'NR 33': 'nr33',
+  'NR 35': 'nr35',
+  'Outros': 'integracao',
+}
+
+// Resolve image path synchronously from glob result keys
+function findImage(keyword: string): string | null {
+  const paths = Object.keys(allImages)
+  const match = paths.find((path) => {
+    const filename = path.split('/').pop()?.toLowerCase() || ''
+    return filename.includes(keyword.toLowerCase())
+  })
+  return match || null
+}
 
 interface Props {
   onNavigate: (v: AppView) => void
@@ -58,33 +87,49 @@ export default function TrainingsPage({ onNavigate }: Props) {
 
       {/* Training categories */}
       <div className="max-w-7xl mx-auto px-8 py-16">
-        <div className="space-y-4">
+        <div className="grid gap-6">
           {trainingCategories.map((category) => {
             const isExpanded = expandedCategory === category.name
+            const nrKey = Object.keys(categoryImageMap).find((k) => category.name.includes(k)) || 'Outros'
+            const imgKey = categoryImageMap[nrKey]
+            const imgPath = findImage(imgKey)
+
             return (
               <div
                 key={category.name}
-                className="border border-brand-light/50 bg-white"
+                className="border border-brand-light/50 bg-white overflow-hidden"
               >
                 {/* Category header */}
                 <button
                   onClick={() => toggleCategory(category.name)}
-                  className="w-full flex items-center justify-between px-6 py-5 hover:bg-brand-cream/50 transition-colors"
+                  className="w-full flex items-center gap-5 px-6 py-5 hover:bg-brand-cream/50 transition-colors text-left"
                 >
-                  <div className="flex items-center gap-4">
-                    <span className="w-10 h-10 bg-brand-teal/10 flex items-center justify-center text-brand-teal font-josefin font-bold text-xs">
-                      {category.courses.length}
-                    </span>
-                    <h2 className="font-josefin text-brand-brown font-semibold uppercase text-sm tracking-[0.08em]">
-                      {category.name}
-                    </h2>
+                  {/* Category image thumbnail */}
+                  {imgPath && (
+                    <CategoryImage imagePath={imgPath} />
+                  )}
+
+                  {/* Category info */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="inline-flex items-center justify-center w-8 h-8 bg-brand-teal/10 text-brand-teal font-josefin font-bold text-xs rounded">
+                        {category.courses.length}
+                      </span>
+                      <h2 className="font-josefin text-brand-brown font-semibold uppercase text-sm tracking-[0.08em]">
+                        {category.name}
+                      </h2>
+                    </div>
+                    <p className="text-brand-gray text-xs ml-11">
+                      {category.courses.reduce((min, c) => Math.min(min, c.hours), Infinity)}h a {Math.max(...category.courses.map((c) => c.hours))}h por curso
+                    </p>
                   </div>
+
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className={`w-5 h-5 text-brand-teal transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                    className={`w-5 h-5 text-brand-teal transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
@@ -96,15 +141,15 @@ export default function TrainingsPage({ onNavigate }: Props) {
                     {category.courses.map((course, i) => (
                       <div
                         key={i}
-                        className={`flex items-center justify-between px-6 py-4 ${
+                        className={`flex items-center justify-between px-6 py-4 pl-20 ${
                           i < category.courses.length - 1 ? 'border-b border-brand-light/20' : ''
                         } hover:bg-brand-cream/30 transition-colors`}
                       >
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-3">
                           <span className="w-1.5 h-1.5 bg-brand-teal rounded-full flex-shrink-0" />
                           <span className="text-brand-gray text-sm">{course.title}</span>
                         </div>
-                        <span className="font-josefin text-xs tracking-wider text-brand-teal whitespace-nowrap ml-4">
+                        <span className="font-josefin text-xs tracking-wider text-brand-teal font-semibold whitespace-nowrap ml-4">
                           {course.hours}h
                         </span>
                       </div>
@@ -160,5 +205,30 @@ export default function TrainingsPage({ onNavigate }: Props) {
         </div>
       </footer>
     </div>
+  )
+}
+
+// Lazy image component using glob import
+function CategoryImage({ imagePath }: { imagePath: string }) {
+  const [src, setSrc] = useState<string | null>(null)
+
+  useEffect(() => {
+    allImages[imagePath]?.().then((mod) => {
+      setSrc(mod.default)
+    })
+  }, [imagePath])
+
+  if (!src) {
+    return (
+      <div className="w-16 h-16 bg-brand-cream rounded flex-shrink-0 animate-pulse" />
+    )
+  }
+
+  return (
+    <img
+      src={src}
+      alt=""
+      className="w-16 h-16 object-cover rounded flex-shrink-0"
+    />
   )
 }
