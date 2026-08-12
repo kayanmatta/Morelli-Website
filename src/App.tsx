@@ -2,11 +2,13 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import LandingPage from './pages/LandingPage'
 import BlogPage from './pages/BlogPage'
+import TrainingsPage from './pages/TrainingsPage'
 
 export type AppView =
   | { name: 'landing' }
   | { name: 'blog' }
   | { name: 'article'; id: number }
+  | { name: 'trainings' }
 
 export default function App() {
   const [view, setView] = useState<AppView>({ name: 'landing' })
@@ -27,6 +29,9 @@ export default function App() {
       )}
       {(view.name === 'blog' || view.name === 'article') && (
         <BlogPage view={view} onNavigate={navigate} />
+      )}
+      {view.name === 'trainings' && (
+        <TrainingsPage onNavigate={navigate} />
       )}
 
       {/* WhatsApp floating button */}

@@ -37,6 +37,7 @@ export default function Navbar({ view, onNavigate }: Props) {
     { label: 'Sobre', action: () => scrollTo('sobre') },
     { label: 'Serviços', action: () => scrollTo('servicos') },
     { label: 'Blog', action: () => { onNavigate({ name: 'blog' }); setMenuOpen(false) } },
+    { label: 'Treinamentos', action: () => { onNavigate({ name: 'trainings' }); setMenuOpen(false) } },
     { label: 'Contato', action: () => scrollTo('contato') },
   ]
 
