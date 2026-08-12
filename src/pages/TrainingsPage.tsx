@@ -3,136 +3,7 @@ import { AppView } from '../App'
 import { trainingCategories, totalCourses } from '../data/trainings'
 
 // Auto-import all training images
-const allImagePaths = Object.keys(
-  import.meta.glob<{ default: string }>('../imports/treinamentos/*.{png,jpg,jpeg}')
-)
 const allImageLoaders = import.meta.glob<{ default: string }>('../imports/treinamentos/*.{png,jpg,jpeg}')
-
-// Find best image for a course by keyword matching
-function findCourseImage(title: string, nr: string): string | null {
-  const keywords = getKeywords(title, nr)
-  for (const kw of keywords) {
-    const match = allImagePaths.find((p) => {
-      const name = p.split('/').pop()?.toLowerCase() || ''
-      return name.includes(kw.toLowerCase())
-    })
-    if (match) return match
-  }
-  return null
-}
-
-function getKeywords(title: string, nr: string): string[] {
-  const t = title.toLowerCase()
-  const kws: string[] = []
-
-  if (t.includes('nr 1') || nr === 'NR 1') kws.push('nr1', 'nr-1')
-  if (t.includes('cipa') || nr === 'NR 5') {
-    if (t.includes('cipatr')) kws.push('cipatr', 'nr 31')
-    else if (t.includes('grau de risco 1')) kws.push('nr5-nivel-1', 'cipa')
-    else if (t.includes('grau de risco 2')) kws.push('cipa 2')
-    else if (t.includes('grau de risco 3')) kws.push('cipa 3')
-    else if (t.includes('grau de risco 4')) kws.push('nr5-nivel-4', 'cipa')
-    else kws.push('cipa')
-  }
-  if (t.includes('epi') || nr === 'NR 6') kws.push('nr 6', 'nr6')
-  if (nr === 'NR 10') {
-    if (t.includes('sep')) kws.push('sep', 'nr10-sep')
-    else if (t.includes('reciclagem')) kws.push('nr 10 2', 'nr10-2')
-    else kws.push('nr 10', 'nr10')
-  }
-  if (nr === 'NR 13') {
-    if (t.includes('caldeira')) kws.push('nr 13', 'nr13')
-    else kws.push('nr 13 2', 'nr13-2')
-  }
-  if (nr === 'NR 15') kws.push('nr 15', 'nr15')
-  if (nr === 'NR 17') {
-    if (t.includes('carga')) kws.push('nr-17-levantamento', 'carga')
-    else if (t.includes('teleatendimento')) kws.push('nr-17-teleatendimento', 'teleatendimento')
-    else if (t.includes('checkout')) kws.push('nr 17 2', 'checkout')
-    else kws.push('nr 17', 'nr17')
-  }
-  if (nr === 'NR 20') {
-    if (t.includes('avançado ii')) kws.push('nr20-avancado-2', 'avancado-2')
-    else if (t.includes('avançado i')) kws.push('nr20-avancado-1', 'avancado-1')
-    else if (t.includes('intermediário classe iii')) kws.push('classe-iii', 'classe-3')
-    else if (t.includes('intermediário classe ii')) kws.push('classe-ii-1', 'classe-2')
-    else if (t.includes('intermediário classe i')) kws.push('nr20-intermediario-classe-i', 'intermediario-classe-i')
-    else if (t.includes('intermediário')) kws.push('nr20-intermediario', 'intermediario')
-    else if (t.includes('básico classe iii')) kws.push('nr20-basico-classe-iii', 'basico-classe-iii', 'classe-iii')
-    else if (t.includes('básico classe ii')) kws.push('nr20-basico-classe-ii', 'basico-classe-ii', 'classe-ii')
-    else if (t.includes('básico classe i')) kws.push('nr20-basico-classe-i', 'basico-classe-i')
-    else if (t.includes('básico')) kws.push('nr20-reciclagem-basico', 'reciclagem-basico')
-    else if (t.includes('iniciação')) kws.push('nr20-iniciacao', 'iniciacao')
-    else if (t.includes('classe ii')) kws.push('nr20-classe-ii', 'classe-ii')
-    else if (t.includes('classe iii')) kws.push('nr20-classe-iii', 'classe-iii')
-    else kws.push('nr20')
-  }
-  if (nr === 'NR 23') {
-    if (t.includes('ppci')) kws.push('nr23-ppci', 'ppci')
-    else if (t.includes('avançado') && t.includes('reciclagem')) kws.push('avancado-reciclagem', 'brigada-avancado-reciclagem')
-    else if (t.includes('avançado') && t.includes('it-17')) kws.push('it-17-avancado', 'avancado')
-    else if (t.includes('avançado')) kws.push('formacao-brigada-avancado', 'incendio-avancado')
-    else if (t.includes('intermediário') && t.includes('it-17') && t.includes('reciclagem')) kws.push('it-17-intermediario-1-1', 'it-17-intermediario-1')
-    else if (t.includes('intermediário') && t.includes('it-17')) kws.push('it-17-intermediario', 'formacao-brigada-intermediario')
-    else if (t.includes('intermediário') && t.includes('reciclagem')) kws.push('intermediario-reciclagem', 'brigada-intermediario-reciclagem')
-    else if (t.includes('intermediário')) kws.push('formacao-brigada-intermediario', 'incendio-intermediario')
-    else if (t.includes('it-17 básico') && t.includes('reciclagem')) kws.push('it-17-basico-reciclagem', 'incendio-basico-reciclagem')
-    else if (t.includes('it-17')) kws.push('it-17-basico', 'formacao-brigada-basico-it-17')
-    else if (t.includes('básico') && t.includes('reciclagem')) kws.push('incendio-basico-reciclagem', 'brigada-basico-reciclagem')
-    else if (t.includes('básico')) kws.push('formacao-brigada-basico', 'incendio-basico')
-    else kws.push('nr23')
-  }
-  if (nr === 'NR 33') {
-    if (t.includes('supervisor') && t.includes('reciclagem')) kws.push('nr33-supervisor-reciclagem', 'supervisor-reciclagem')
-    else if (t.includes('supervisor')) kws.push('nr33-supervisor', 'supervisor')
-    else if (t.includes('reciclagem')) kws.push('nr33-trabalhador-vigia-reciclagem', 'vigia-reciclagem')
-    else kws.push('nr33-trabalhador', 'nr33')
-  }
-  if (nr === 'NR 35') {
-    if (t.includes('supervisor')) kws.push('nr35-supervisor', 'nr35-altura-supervisor')
-    else if (t.includes('reciclagem')) kws.push('nr35-reciclagem', 'nr35-altura-reciclagem')
-    else kws.push('nr35', 'nr35-altura')
-  }
-  // Outros
-  if (t.includes('direção defensiva') && t.includes('caminhão')) kws.push('direcao-caminhao', 'defensiva-caminhao')
-  if (t.includes('direção') && t.includes('frot')) kws.push('direcao-froteiros', 'defensiva-frot')
-  if (t.includes('anatomia')) kws.push('anatomia', 'nocoes-basicas')
-  if (t.includes('rcp') || t.includes('ressuscitação')) kws.push('rcp', 'RCP')
-  if (t.includes('aph') && t.includes('intermediário')) kws.push('aph-intermediario', 'primeiros-socorros-intermediario')
-  if (t.includes('aph') || t.includes('primeiros socorros')) kws.push('aph-basico', 'primeiros-socorros')
-  if (t.includes('avaliação geral')) kws.push('avaliacao-geral', 'avaliacao')
-  if (t.includes('apr') || t.includes('análise de risco')) kws.push('apr', 'analise-risco')
-  if (t.includes('covid')) kws.push('covid')
-  if (t.includes('5s')) kws.push('5s', 'treinamento-5s')
-  if (t.includes('lgpd')) kws.push('lgpd')
-  if (t.includes('valas') || t.includes('escavaç')) kws.push('valas', 'escavaco')
-  if (t.includes('personalizado')) kws.push('integracao', 'personalizado')
-
-  return kws
-}
-
-// Lazy image component
-function CourseImage({ imagePath }: { imagePath: string }) {
-  const [src, setSrc] = useState<string | null>(null)
-
-  useEffect(() => {
-    allImageLoaders[imagePath]?.().then((mod) => setSrc(mod.default))
-  }, [imagePath])
-
-  if (!src) {
-    return (
-      <div className="w-full h-44 bg-brand-cream animate-pulse" />
-    )
-  }
-
-  return (
-    <img
-      src={src}
-      alt=""
-      className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
-    />
-  )
-}
 
 interface Props {
   onNavigate: (v: AppView) => void
@@ -202,7 +73,10 @@ export default function TrainingsPage({ onNavigate }: Props) {
             {/* Cards grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {category.courses.map((course, i) => {
-                const imgPath = findCourseImage(course.title, course.nr)
+                const imgKey = course.image
+                  ? Object.keys(allImageLoaders).find((p) => p.endsWith(`/${course.image}`))
+                  : null
+
                 return (
                   <div
                     key={i}
@@ -210,8 +84,8 @@ export default function TrainingsPage({ onNavigate }: Props) {
                   >
                     {/* Image */}
                     <div className="relative overflow-hidden">
-                      {imgPath ? (
-                        <CourseImage imagePath={imgPath} />
+                      {imgKey ? (
+                        <CourseImage imagePath={imgKey} />
                       ) : (
                         <div className="w-full h-44 bg-gradient-to-br from-brand-cream to-brand-light/30 flex items-center justify-center">
                           <span className="font-josefin text-brand-brown/20 font-bold text-3xl">{course.nr}</span>
@@ -301,5 +175,26 @@ export default function TrainingsPage({ onNavigate }: Props) {
         </div>
       </footer>
     </div>
+  )
+}
+
+// Lazy image component
+function CourseImage({ imagePath }: { imagePath: string }) {
+  const [src, setSrc] = useState<string | null>(null)
+
+  useEffect(() => {
+    allImageLoaders[imagePath]?.().then((mod) => setSrc(mod.default))
+  }, [imagePath])
+
+  if (!src) {
+    return <div className="w-full h-44 bg-brand-cream animate-pulse" />
+  }
+
+  return (
+    <img
+      src={src}
+      alt=""
+      className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+    />
   )
 }
