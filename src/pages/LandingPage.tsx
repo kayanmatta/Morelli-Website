@@ -8,7 +8,6 @@ import higieneImg from '@/imports/higiene.jpg'
 import treinamentoImg from '@/imports/treinamento.jpg'
 import heroSstImg from '@/imports/hero-sst.jpg'
 import jeanEdgarImg from '@/imports/Jeane&Edgar.jpg'
-import logoHoriz from '@/imports/logo_horizontal_morelli_page-0001.jpg'
 import logoWhite from '@/imports/Logo_sem_fundo.png'
 
 const imgMap: Record<string, string> = {
@@ -547,13 +546,6 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                 ))}
               </div>
 
-              <div className="fup d3 mt-10">
-                <img
-                  src={logoHoriz}
-                  alt="Morelli Engenharia"
-                  className="h-16 object-contain"
-                />
-              </div>
             </div>
 
             {/* Right form */}
