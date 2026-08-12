@@ -9,6 +9,7 @@ import treinamentoImg from '@/imports/treinamento.jpg'
 import heroSstImg from '@/imports/hero-sst.jpg'
 import jeanEdgarImg from '@/imports/Jeane&Edgar.jpg'
 import logoHoriz from '@/imports/logo_horizontal_morelli_page-0001.jpg'
+import logoWhite from '@/imports/Logo_sem_fundo.png'
 
 const imgMap: Record<string, string> = {
   hero: heroSstImg,
@@ -652,7 +653,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
             <div>
-              <img src={logoHoriz} alt="Morelli Engenharia" className="h-16 mb-5 object-contain brightness-0 invert opacity-90" />
+              <img src={logoWhite} alt="Morelli Engenharia" className="h-14 mb-5 object-contain opacity-90" />
               <p className="text-white/50 text-sm leading-relaxed">
                 Engenharia e Assessoria em Segurança do Trabalho com excelência,
                 ética e comprometimento.
