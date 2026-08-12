@@ -106,7 +106,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
     const body = encodeURIComponent(
       `Nome: ${formData.nome}\nEmpresa: ${formData.empresa}\nE-mail: ${formData.email}\nTelefone: ${formData.telefone}\n\nMensagem:\n${formData.mensagem}`
     )
-    window.open(`mailto:jeane@morelliengenharia.com.br?subject=${subject}&body=${body}`, '_blank')
+    window.open(`mailto:contato@morelliengenharia.com.br?subject=${subject}&body=${body}`, '_blank')
     setSent(true)
   }
 
@@ -526,8 +526,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                       </svg>
                     ),
                     label: 'E-mail',
-                    value: 'jeane@morelliengenharia.com.br',
-                    href: 'mailto:jeane@morelliengenharia.com.br',
+                    value: 'contato@morelliengenharia.com.br',
+                    href: 'mailto:contato@morelliengenharia.com.br',
                   },
                 ].map((c) => (
                   <div key={c.label} className="flex items-start gap-4">
@@ -675,8 +675,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                 <p>Engenheira de Segurança do Trabalho</p>
                 <a href="tel:+551239295154" className="block hover:text-brand-teal transition-colors">(12) 3929-5154</a>
                 <a href="tel:+5512997644911" className="block hover:text-brand-teal transition-colors">(12) 99764-4911</a>
-                <a href="mailto:jeane@morelliengenharia.com.br" className="block hover:text-brand-teal transition-colors break-all">
-                  jeane@morelliengenharia.com.br
+                <a href="mailto:contato@morelliengenharia.com.br" className="block hover:text-brand-teal transition-colors break-all">
+                  contato@morelliengenharia.com.br
                 </a>
               </div>
             </div>
