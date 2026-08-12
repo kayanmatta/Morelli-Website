@@ -27,11 +27,11 @@ function getKeywords(title: string, nr: string): string[] {
 
   if (t.includes('nr 1') || nr === 'NR 1') kws.push('nr1', 'nr-1')
   if (t.includes('cipa') || nr === 'NR 5') {
-    if (t.includes('grau de risco 1')) kws.push('cipa-1', 'cipa 1', 'cipa.png')
-    else if (t.includes('grau de risco 2')) kws.push('cipa 2', 'cipa-2')
-    else if (t.includes('grau de risco 3')) kws.push('cipa 3', 'cipa-3')
-    else if (t.includes('grau de risco 4')) kws.push('cipa 4', 'cipa-4')
-    else if (t.includes('cipatr')) kws.push('cipatr', 'nr 31')
+    if (t.includes('cipatr')) kws.push('cipatr', 'nr 31')
+    else if (t.includes('grau de risco 2')) kws.push('cipa 2')
+    else if (t.includes('grau de risco 3')) kws.push('cipa 3')
+    else if (t.includes('grau de risco 4')) kws.push('cipa')
+    else if (t.includes('grau de risco 1')) kws.push('cipa')
     else kws.push('cipa')
   }
   if (t.includes('epi') || nr === 'NR 6') kws.push('nr 6', 'nr6')
