@@ -102,6 +102,11 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const subject = encodeURIComponent(`Orçamento - ${formData.nome || 'Novo contato'}`)
+    const body = encodeURIComponent(
+      `Nome: ${formData.nome}\nEmpresa: ${formData.empresa}\nE-mail: ${formData.email}\nTelefone: ${formData.telefone}\n\nMensagem:\n${formData.mensagem}`
+    )
+    window.open(`mailto:jeane@morelliengenharia.com.br?subject=${subject}&body=${body}`, '_blank')
     setSent(true)
   }
 
@@ -229,7 +234,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
           <div className="grid grid-cols-2 md:grid-cols-4">
             {[
               { value: 10, suffix: '+', label: 'anos de\nexperiência' },
-              { value: 500, suffix: '+', label: 'empresas\nacessoradas' },
+              { value: 500, suffix: '+', label: 'empresas\nassessoradas' },
               { value: 2000, suffix: '+', label: 'treinamentos\nrealizados' },
               { value: 1500, suffix: '+', label: 'laudos\nemitidos' },
             ].map((s, i) => (
@@ -686,7 +691,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
 
           <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-josefin text-white/30 text-xs tracking-[0.15em] uppercase">
-              © 2025 Morelli Engenharia e Assessoria em Segurança do Trabalho
+              © 2025-2026 Morelli Engenharia e Assessoria em Segurança do Trabalho
             </p>
             <div className="flex gap-6">
               {['Política de Privacidade', 'Termos de Uso'].map((l) => (
