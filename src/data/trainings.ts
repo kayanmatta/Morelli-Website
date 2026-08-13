@@ -67,7 +67,7 @@ export const trainingCategories: TrainingCategory[] = [
   {
     name: 'NR 20 – Inflamáveis e Combustíveis',
     courses: [
-      { nr: 'NR 20', title: 'Inflamáveis e Combustíveis – Básico (Classe I)', hours: 6 },
+      { nr: 'NR 20', title: 'Inflamáveis e Combustíveis – Básico (Classe I)', hours: 6, image: 'Inflamáveis e Combustíveis – Básico (Classe I)' },
       { nr: 'NR 20', title: 'Inflamáveis e Combustíveis – Básico (Classe II)', hours: 10, image: '42Treinamento-de-NR20-Basico-Classe-II.png' },
       { nr: 'NR 20', title: 'Inflamáveis e Combustíveis – Básico (Classe III)', hours: 12, image: '43Treinamento-de-NR20-Basico-Classe-III.png' },
       { nr: 'NR 20', title: 'Inflamáveis e Combustíveis – Básico (Reciclagem)', hours: 4, image: 'thumb-nr20-reciclagem-basico-1.png' },

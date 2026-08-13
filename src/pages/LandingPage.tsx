@@ -188,6 +188,9 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
         <img
           src={heroImg}
           alt="Engenheiros em obra ao pôr do sol"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div
@@ -287,6 +290,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
               <img
                 src={jeanEdgarImg}
                 alt="Jeane e Edgar Morelli — sócios da Morelli Engenharia"
+                width={600}
+                height={520}
                 className="w-full object-cover object-top max-h-[520px] rounded-xl"
               />
             </div>
@@ -388,7 +393,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                   {d.title}
                 </h3>
                 <div className="w-8 h-px bg-brand-teal/50 mb-4 transition-all duration-300 group-hover:w-16 group-hover:bg-brand-teal" />
-                <p className="text-white/60 text-sm leading-relaxed">{d.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -399,7 +404,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                 <h3 className="font-josefin text-white text-2xl uppercase font-semibold tracking-wide">
                   Pronto para garantir a segurança da sua empresa?
                 </h3>
-                <p className="mt-4 text-white/60 leading-relaxed">
+                <p className="mt-4 text-white/70 leading-relaxed">
                   Entre em contato e receba uma análise gratuita das necessidades de SST
                   da sua empresa, sem compromisso.
                 </p>
@@ -646,7 +651,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
           <div className="grid md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
             <div>
               <img src={logoWhite} alt="Morelli Engenharia" className="h-14 mb-5 object-contain opacity-90" />
-              <p className="text-white/50 text-sm leading-relaxed">
+              <p className="text-white/60 text-sm leading-relaxed">
                 Engenharia e Assessoria em Segurança do Trabalho com excelência,
                 ética e comprometimento.
               </p>
@@ -659,7 +664,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                   <li key={s}>
                     <button
                       onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="text-white/50 text-sm hover:text-brand-teal transition-colors"
+                      className="text-white/60 text-sm hover:text-brand-teal transition-colors"
                     >
                       {s}
                     </button>
@@ -670,7 +675,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
 
             <div>
               <h4 className="font-josefin text-white text-xs tracking-[0.3em] uppercase mb-5">Contato</h4>
-              <div className="space-y-3 text-white/50 text-sm">
+              <div className="space-y-3 text-white/60 text-sm">
                 <p>Jeane Morelli</p>
                 <p>Engenheira de Segurança do Trabalho</p>
                 <a href="tel:+551239295154" className="block hover:text-brand-teal transition-colors">(12) 3929-5154</a>
@@ -683,12 +688,12 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
           </div>
 
           <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-josefin text-white/30 text-xs tracking-[0.15em] uppercase">
+            <p className="font-josefin text-white/50 text-xs tracking-[0.15em] uppercase">
               © 2025-2026 Morelli Engenharia e Assessoria em Segurança do Trabalho
             </p>
             <div className="flex gap-6">
               {['Política de Privacidade', 'Termos de Uso'].map((l) => (
-                <button key={l} className="font-josefin text-white/30 text-xs tracking-[0.1em] hover:text-brand-teal transition-colors">
+                <button key={l} className="font-josefin text-white/50 text-xs tracking-[0.1em] hover:text-brand-teal transition-colors">
                   {l}
                 </button>
               ))}

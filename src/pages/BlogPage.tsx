@@ -360,7 +360,7 @@ function BlogFooter({ onNavigate }: { onNavigate: (v: AppView) => void }) {
   return (
     <footer className="bg-brand-brown py-10">
       <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="font-josefin text-white/30 text-xs tracking-[0.15em] uppercase">
+        <p className="font-josefin text-white/50 text-xs tracking-[0.15em] uppercase">
           © 2025-2026 Morelli Engenharia e Assessoria em Segurança do Trabalho
         </p>
         <button

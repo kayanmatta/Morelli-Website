@@ -1,0 +1,20 @@
+# Morelli Engenharia e Assessoria em Segurança do Trabalho
+
+> Engenharia e Assessoria em Segurança do Trabalho. PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado.
+
+## Serviços
+
+- [Higiene Ocupacional](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Avaliação de agentes físicos, químicos e biológicos
+- [Treinamentos NR](https://morelliengenharia1.kayan-devweb.workers.dev/#treinamentos): Capacitações conforme Normas Regulamentadoras
+- [Laudos Técnicos](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Insalubridade, periculosidade, LTCAT, PPP
+- [Gestão em SST](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): PGR, PCMSO, SESMT Terceirizado
+
+## Blog
+
+- [Blog e Artigos](https://morelliengenharia1.kayan-devweb.workers.dev/#blog): Conteúdo sobre segurança e saúde do trabalho
+
+## Contato
+
+- Telefone: (12) 3929-5154
+- Celular: (12) 99764-4911
+- E-mail: contato@morelliengenharia.com.br
