@@ -69,10 +69,10 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
   }, [])
   return (
     <div ref={ref}>
-      <div className="font-josefin font-bold text-white leading-none" style={{ fontSize: 'clamp(2.8rem, 5vw, 4rem)' }}>
+      <div className="font-josefin font-bold text-white leading-none" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
         {suffix}{count}
       </div>
-      <div className="mt-2 text-white/80 text-sm leading-snug whitespace-pre-line">{label}</div>
+      <div className="mt-1 text-white/80 text-xs leading-snug whitespace-pre-line">{label}</div>
     </div>
   )
 }
@@ -229,7 +229,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
       </section>
 
       {/* ── STATS ────────────────────────────────────────────────────── */}
-      <section className="bg-brand-teal py-14">
+      <section className="bg-brand-teal py-4">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {[
@@ -238,7 +238,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
               { value: 2000, suffix: '+', label: 'treinamentos\nrealizados' },
               { value: 1500, suffix: '+', label: 'laudos\nemitidos' },
             ].map((s, i) => (
-              <div key={i} className={`text-center px-6 py-6 ${i > 0 ? 'border-l border-white/30' : ''}`}>
+              <div key={i} className={`text-center px-4 py-2 ${i > 0 ? 'border-l border-white/30' : ''}`}>
                 <StatItem value={s.value} suffix={s.suffix} label={s.label} />
               </div>
             ))}
