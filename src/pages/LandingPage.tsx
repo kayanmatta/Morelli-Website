@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+﻿import { useRef, useEffect, useState } from 'react'
 import { AppView } from '../App'
 import { articles } from '../data/articles'
 
@@ -272,33 +272,6 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
         </div>
       </section>
 
-      {/* ── EMPRESAS ───────────────────────────────────────────────────── */}
-      <section className="bg-brand-teal py-10 overflow-hidden">
-        <div className="text-center mb-8">
-          <p className="font-josefin text-white/80 text-xs tracking-[0.3em] uppercase">
-            Empresas que confiam na Morelli
-          </p>
-        </div>
-        <div className="overflow-hidden">
-          <div className="marquee-track">
-            {/* Duplicate logos for seamless loop */}
-            {[...companyLogos, ...companyLogos].map((logo, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center px-12 flex-shrink-0"
-                style={{ minWidth: '240px' }}
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-20 w-auto max-w-[200px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── SOBRE ────────────────────────────────────────────────────── */}
       <section id="sobre" className="py-24 bg-white">
         <div ref={sobreRef} className="max-w-7xl mx-auto px-8">
@@ -402,6 +375,32 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                     Solicitar →
                   </button>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── EMPRESAS ───────────────────────────────────────────────── */}
+      <section className="bg-brand-teal py-10 overflow-hidden">
+        <div className="text-center mb-8">
+          <p className="font-josefin text-white/80 text-xs tracking-[0.3em] uppercase">
+            Empresas que confiam na Morelli
+          </p>
+        </div>
+        <div className="overflow-hidden">
+          <div className="marquee-track">
+            {[...companyLogos, ...companyLogos].map((logo, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center px-12 flex-shrink-0"
+                style={{ minWidth: '240px' }}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-20 w-auto max-w-[200px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
             ))}
           </div>
