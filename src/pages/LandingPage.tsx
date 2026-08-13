@@ -285,13 +285,13 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
             {[...companyLogos, ...companyLogos].map((logo, i) => (
               <div
                 key={i}
-                className="flex items-center justify-center px-10 flex-shrink-0"
-                style={{ minWidth: '180px' }}
+                className="flex items-center justify-center px-12 flex-shrink-0"
+                style={{ minWidth: '240px' }}
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-12 w-auto max-w-[150px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+                  className="h-20 w-auto max-w-[200px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
                 />
               </div>
             ))}
