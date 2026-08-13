@@ -10,6 +10,29 @@ import heroSstImg from '@/imports/hero-sst.jpg'
 import jeanEdgarImg from '@/imports/Jeane&Edgar.jpg'
 import logoWhite from '@/imports/Logo_sem_fundo.png'
 
+import logoVanguardia from '@/imports/empresas/VANGUARDA-LOGO.svg'
+import logoPetrobras from '@/imports/empresas/Petrobras1.svg'
+import logoTrelleborg from '@/imports/empresas/LOGO-TELLEBORG.svg'
+import logoSafran from '@/imports/empresas/LOGO-SAFRAN2.svg'
+import logoLear from '@/imports/empresas/LEAR-LOGO.svg'
+import logoFreudenberg from '@/imports/empresas/FREUDENBERG-LOGO.svg'
+import logoEmbraer from '@/imports/empresas/LOGO-TELLEBORG.svg'
+import logoAmBev from '@/imports/empresas/AMBEV-LOGO2.svg'
+import logoAco from '@/imports/empresas/ACO-LOGO2.svg'
+import logoSesi from '@/imports/empresas/SESI-LOGO2.svg'
+
+const companyLogos = [
+  { src: logoVanguardia, alt: 'Vanguardia' },
+  { src: logoPetrobras, alt: 'Petrobras' },
+  { src: logoTrelleborg, alt: 'Trelleborg' },
+  { src: logoSafran, alt: 'Safran' },
+  { src: logoLear, alt: 'Lear' },
+  { src: logoFreudenberg, alt: 'Freudenberg' },
+  { src: logoAmBev, alt: 'AmBev' },
+  { src: logoAco, alt: 'ACO' },
+  { src: logoSesi, alt: 'SESI' },
+]
+
 const imgMap: Record<string, string> = {
   hero: heroSstImg,
   equipe: equipeImg,
@@ -243,6 +266,33 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
             ].map((s, i) => (
               <div key={i} className={`text-center px-4 py-2 ${i > 0 ? 'border-l border-white/30' : ''}`}>
                 <StatItem value={s.value} suffix={s.suffix} label={s.label} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── EMPRESAS ───────────────────────────────────────────────────── */}
+      <section className="bg-brand-teal py-10 overflow-hidden">
+        <div className="text-center mb-8">
+          <p className="font-josefin text-white/80 text-xs tracking-[0.3em] uppercase">
+            Empresas que confiam na Morelli
+          </p>
+        </div>
+        <div className="overflow-hidden">
+          <div className="marquee-track">
+            {/* Duplicate logos for seamless loop */}
+            {[...companyLogos, ...companyLogos].map((logo, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center px-10 flex-shrink-0"
+                style={{ minWidth: '180px' }}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-12 w-auto max-w-[150px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+                />
               </div>
             ))}
           </div>
