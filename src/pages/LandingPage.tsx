@@ -291,7 +291,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-20 w-auto max-w-[200px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+                  className="h-20 w-auto max-w-[200px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
