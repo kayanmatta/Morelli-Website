@@ -139,7 +139,7 @@ export default function TrainingsPage({ onNavigate }: Props) {
               Solicitar Orçamento
             </button>
             <a
-              href="https://wa.me/551239226658?text=Ol%C3%A1.%20Vim%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20treinamentos."
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 border border-white/30 text-white hover:border-brand-teal hover:text-brand-teal transition-all"

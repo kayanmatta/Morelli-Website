@@ -129,7 +129,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
     const body = encodeURIComponent(
       `Nome: ${formData.nome}\nEmpresa: ${formData.empresa}\nE-mail: ${formData.email}\nTelefone: ${formData.telefone}\n\nMensagem:\n${formData.mensagem}`
     )
-    window.open(`mailto:contato@morelliengenharia.com.br?subject=${subject}&body=${body}`, '_blank')
+    window.open(`mailto:contato@empresa.com.br?subject=${subject}&body=${body}`, '_blank')
     setSent(true)
   }
 
@@ -466,10 +466,10 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                   Fale Conosco
                 </button>
                 <a
-                  href="tel:+551239295154"
+                  href="tel:+55XXXXXXXXXX"
                   className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 border border-white/30 text-white hover:border-brand-teal hover:text-brand-teal transition-all"
                 >
-                  (12) 3929-5154
+                  (XX) XXXX-XXXX
                 </a>
               </div>
             </div>
@@ -560,8 +560,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                       </svg>
                     ),
                     label: 'Telefone',
-                    value: '(12) 3929-5154',
-                    href: 'tel:+551239295154',
+                    value: '(XX) XXXX-XXXX',
+                    href: 'tel:+55XXXXXXXXXX',
                   },
                   {
                     icon: (
@@ -570,8 +570,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                       </svg>
                     ),
                     label: 'Celular',
-                    value: '(12) 99764-4911',
-                    href: 'tel:+5512997644911',
+                    value: '(XX) XXXXX-XXXX',
+                    href: 'tel:+55XXXXXXXXXX',
                   },
                   {
                     icon: (
@@ -580,8 +580,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                       </svg>
                     ),
                     label: 'E-mail',
-                    value: 'contato@morelliengenharia.com.br',
-                    href: 'mailto:contato@morelliengenharia.com.br',
+                    value: 'contato@empresa.com.br',
+                    href: 'mailto:contato@empresa.com.br',
                   },
                 ].map((c) => (
                   <div key={c.label} className="flex items-start gap-4">
@@ -727,10 +727,10 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
               <div className="space-y-3 text-white/60 text-sm">
                 <p>Jeane Morelli</p>
                 <p>Engenheira de Segurança do Trabalho</p>
-                <a href="tel:+551239295154" className="block hover:text-brand-teal transition-colors">(12) 3929-5154</a>
-                <a href="tel:+5512997644911" className="block hover:text-brand-teal transition-colors">(12) 99764-4911</a>
-                <a href="mailto:contato@morelliengenharia.com.br" className="block hover:text-brand-teal transition-colors break-all">
-                  contato@morelliengenharia.com.br
+                <a href="tel:+55XXXXXXXXXX" className="block hover:text-brand-teal transition-colors">(XX) XXXX-XXXX</a>
+                <a href="tel:+55XXXXXXXXXX" className="block hover:text-brand-teal transition-colors">(XX) XXXXX-XXXX</a>
+                <a href="mailto:contato@empresa.com.br" className="block hover:text-brand-teal transition-colors break-all">
+                  contato@empresa.com.br
                 </a>
               </div>
             </div>
