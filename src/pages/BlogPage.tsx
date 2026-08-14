@@ -72,6 +72,8 @@ export default function BlogPage({ view, onNavigate }: Props) {
           <img
             src={imgMap[currentArticle.imageKey]}
             alt={currentArticle.title}
+            width={1200}
+            height={320}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-brand-brown/75" />
@@ -200,6 +202,8 @@ export default function BlogPage({ view, onNavigate }: Props) {
                       <img
                         src={imgMap[a.imageKey]}
                         alt={a.title}
+                        width={300}
+                        height={144}
                         className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
@@ -281,6 +285,8 @@ export default function BlogPage({ view, onNavigate }: Props) {
               <img
                 src={imgMap[filtered[0].imageKey]}
                 alt={filtered[0].title}
+                width={600}
+                height={288}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -318,6 +324,8 @@ export default function BlogPage({ view, onNavigate }: Props) {
                 <img
                   src={imgMap[art.imageKey]}
                   alt={art.title}
+                  width={400}
+                  height={208}
                   className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>

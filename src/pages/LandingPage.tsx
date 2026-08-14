@@ -2,7 +2,7 @@
 import { AppView } from '../App'
 import { articles } from '../data/articles'
 
-import heroImg from '@/imports/ChatGPT_Image_10_de_ago._de_2026__16_57_31.png'
+import heroImg from '@/imports/hero-bg.jpg'
 import equipeImg from '@/imports/equipe.jpg'
 import higieneImg from '@/imports/higiene.jpg'
 import treinamentoImg from '@/imports/treinamento.jpg'
@@ -346,6 +346,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                 <img
                   src={s.img}
                   alt={s.title}
+                  width={400}
+                  height={420}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-brown/95 via-brand-brown/60 to-brand-brown/10 transition-all duration-300 group-hover:via-brand-brown/75" />
@@ -399,6 +401,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                 <img
                   src={logo.src}
                   alt={logo.alt}
+                  width={200}
+                  height={80}
                   className="h-20 w-auto max-w-[200px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
@@ -507,6 +511,8 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                   <img
                     src={imgMap[art.imageKey]}
                     alt={art.title}
+                    width={400}
+                    height={208}
                     className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
@@ -699,7 +705,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
             <div>
-              <img src={logoWhite} alt="Morelli Engenharia" className="h-14 mb-5 object-contain opacity-90" />
+              <img src={logoWhite} alt="Morelli Engenharia" width={180} height={56} className="h-14 mb-5 object-contain opacity-90" />
               <p className="text-white/60 text-sm leading-relaxed">
                 Engenharia e Assessoria em Segurança do Trabalho com excelência,
                 ética e comprometimento.

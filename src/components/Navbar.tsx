@@ -53,9 +53,9 @@ export default function Navbar({ view, onNavigate }: Props) {
           className="flex-shrink-0 focus:outline-none"
         >
           {isDark ? (
-            <img src={logoWhite} alt="Morelli Engenharia" className="h-11 object-contain" />
+            <img src={logoWhite} alt="Morelli Engenharia" width={180} height={44} className="h-11 object-contain" />
           ) : (
-            <img src={logoHorizontal} alt="Morelli Engenharia" className="h-14 object-contain" />
+            <img src={logoHorizontal} alt="Morelli Engenharia" width={200} height={56} className="h-14 object-contain" />
           )}
         </button>
 
