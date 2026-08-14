@@ -386,9 +386,9 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
       {/* ── EMPRESAS ───────────────────────────────────────────────── */}
       <section className="bg-brand-teal py-10 overflow-hidden">
         <div className="text-center mb-8">
-          <p className="font-josefin text-white font-semibold text-lg tracking-[0.2em] uppercase">
+          <h2 className="font-josefin text-white font-semibold text-lg tracking-[0.2em] uppercase">
             Empresas que confiam na Morelli
-          </p>
+          </h2>
         </div>
         <div className="overflow-hidden">
           <div className="marquee-track">
