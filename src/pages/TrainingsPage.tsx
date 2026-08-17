@@ -134,7 +134,7 @@ export default function TrainingsPage({ onNavigate }: Props) {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <button
               onClick={() => onNavigate({ name: 'landing' })}
-              className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 bg-brand-teal text-white hover:bg-brand-teal-dark transition-colors"
+              className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 bg-brand-teal text-white hover:bg-brand-teal-dark active:scale-95 transition-all cursor-pointer"
             >
               Solicitar Orçamento
             </button>
@@ -142,7 +142,7 @@ export default function TrainingsPage({ onNavigate }: Props) {
               href="https://wa.me/551239226658?text=Ol%C3%A1.%20Vim%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20treinamentos."
               target="_blank"
               rel="noopener noreferrer"
-              className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 border border-white/30 text-white hover:border-brand-teal hover:text-brand-teal transition-all"
+              className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 border border-white/30 text-white hover:border-brand-teal hover:text-brand-teal active:scale-95 transition-all cursor-pointer"
             >
               WhatsApp
             </a>
@@ -154,7 +154,7 @@ export default function TrainingsPage({ onNavigate }: Props) {
       <div className="max-w-7xl mx-auto px-8 py-10">
         <button
           onClick={() => onNavigate({ name: 'landing' })}
-          className="flex items-center gap-2 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal hover:gap-3 transition-all"
+          className="flex items-center gap-2 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal hover:gap-3 active:opacity-50 transition-all cursor-pointer"
         >
           ← Voltar ao site
         </button>
@@ -168,7 +168,7 @@ export default function TrainingsPage({ onNavigate }: Props) {
           </p>
           <button
             onClick={() => onNavigate({ name: 'landing' })}
-            className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white transition-all"
+            className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white active:scale-95 transition-all cursor-pointer"
           >
             ← Voltar ao site
           </button>

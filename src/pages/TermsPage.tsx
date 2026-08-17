@@ -10,7 +10,7 @@ export default function TermsPage({ onNavigate }: Props) {
       <div className="max-w-4xl mx-auto px-8 py-16">
         <button
           onClick={() => onNavigate({ name: 'landing' })}
-          className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal hover:gap-3 transition-all mb-10 flex items-center gap-2"
+          className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal hover:gap-3 active:opacity-50 transition-all mb-10 flex items-center gap-2 cursor-pointer"
         >
           ← Voltar ao site
         </button>
@@ -83,7 +83,7 @@ export default function TermsPage({ onNavigate }: Props) {
           </p>
           <button
             onClick={() => onNavigate({ name: 'landing' })}
-            className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white transition-all"
+            className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white active:scale-95 transition-all cursor-pointer"
           >
             ← Voltar ao site
           </button>

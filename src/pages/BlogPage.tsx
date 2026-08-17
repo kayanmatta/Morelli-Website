@@ -96,11 +96,11 @@ export default function BlogPage({ view, onNavigate }: Props) {
         {/* Breadcrumb */}
         <div className="border-b border-brand-light/50">
           <div className="max-w-4xl mx-auto px-8 py-4 flex items-center gap-2 text-xs font-josefin tracking-wider text-brand-light">
-            <button onClick={() => onNavigate({ name: 'landing' })} className="hover:text-brand-teal transition-colors">
+            <button onClick={() => onNavigate({ name: 'landing' })} className="hover:text-brand-teal active:text-brand-teal-dark transition-colors cursor-pointer">
               Início
             </button>
             <span>/</span>
-            <button onClick={() => onNavigate({ name: 'blog' })} className="hover:text-brand-teal transition-colors">
+            <button onClick={() => onNavigate({ name: 'blog' })} className="hover:text-brand-teal active:text-brand-teal-dark transition-colors cursor-pointer">
               Blog
             </button>
             <span>/</span>
@@ -166,7 +166,7 @@ export default function BlogPage({ view, onNavigate }: Props) {
               </div>
               <button
                 onClick={() => onNavigate({ name: 'landing' })}
-                className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 bg-brand-teal text-white hover:bg-brand-teal-dark transition-colors flex-shrink-0"
+                className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 bg-brand-teal text-white hover:bg-brand-teal-dark active:scale-95 transition-all flex-shrink-0 cursor-pointer"
               >
                 Solicitar Orçamento
               </button>
@@ -176,7 +176,7 @@ export default function BlogPage({ view, onNavigate }: Props) {
           {/* Back to blog */}
           <button
             onClick={() => onNavigate({ name: 'blog' })}
-            className="mt-10 flex items-center gap-2 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal hover:gap-3 transition-all"
+            className="mt-10 flex items-center gap-2 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal hover:gap-3 active:opacity-50 transition-all cursor-pointer"
           >
             ← Voltar ao blog
           </button>
@@ -260,7 +260,7 @@ export default function BlogPage({ view, onNavigate }: Props) {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`font-josefin text-xs tracking-[0.15em] uppercase py-4 px-5 border-b-2 transition-all whitespace-nowrap ${
+                className={`font-josefin text-xs tracking-[0.15em] uppercase py-4 px-5 border-b-2 transition-all whitespace-nowrap cursor-pointer ${
                   activeCategory === cat
                     ? 'border-brand-teal text-brand-teal'
                     : 'border-transparent text-brand-gray hover:text-brand-teal'
@@ -373,7 +373,7 @@ function BlogFooter({ onNavigate }: { onNavigate: (v: AppView) => void }) {
         </p>
         <button
           onClick={() => onNavigate({ name: 'landing' })}
-          className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white transition-all"
+          className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white active:scale-95 transition-all cursor-pointer"
         >
           ← Voltar ao site
         </button>
