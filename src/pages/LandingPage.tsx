@@ -108,6 +108,7 @@ interface Props {
 export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
   const [formData, setFormData] = useState({ nome: '', empresa: '', email: '', telefone: '', mensagem: '' })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
   const heroRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -123,14 +124,40 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
   const blogRef = useReveal()
   const contatoRef = useReveal()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Orçamento - ${formData.nome || 'Novo contato'}`)
-    const body = encodeURIComponent(
-      `Nome: ${formData.nome}\nEmpresa: ${formData.empresa}\nE-mail: ${formData.email}\nTelefone: ${formData.telefone}\n\nMensagem:\n${formData.mensagem}`
-    )
-    window.open(`mailto:contato@morelliengenharia.com.br?subject=${subject}&body=${body}`, '_blank')
-    setSent(true)
+    setSending(true)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: 'a42e2e59-7bc7-425d-8404-2bcc4315b4a6',
+          subject: `Orçamento - ${formData.nome || 'Novo contato'}`,
+          from_name: 'Morelli Engenharia',
+          nome: formData.nome,
+          empresa: formData.empresa,
+          email: formData.email,
+          telefone: formData.telefone,
+          mensagem: formData.mensagem,
+        }),
+      })
+      const json = await res.json()
+      if (json.success) {
+        setSent(true)
+        setFormData({ nome: '', empresa: '', email: '', telefone: '', mensagem: '' })
+      }
+    } catch {
+      // fallback to mailto
+      const subject = encodeURIComponent(`Orçamento - ${formData.nome || 'Novo contato'}`)
+      const body = encodeURIComponent(
+        `Nome: ${formData.nome}\nEmpresa: ${formData.empresa}\nE-mail: ${formData.email}\nTelefone: ${formData.telefone}\n\nMensagem:\n${formData.mensagem}`
+      )
+      window.open(`mailto:contato@morelliengenharia.com.br?subject=${subject}&body=${body}`, '_blank')
+      setSent(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   const services = [
@@ -689,9 +716,10 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                   </div>
                   <button
                     type="submit"
-                    className="w-full font-josefin text-xs tracking-[0.25em] uppercase bg-brand-brown text-white py-4 hover:bg-brand-teal transition-colors duration-300"
+                    disabled={sending}
+                    className="w-full font-josefin text-xs tracking-[0.25em] uppercase bg-brand-brown text-white py-4 hover:bg-brand-teal transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Enviar Mensagem
+                    {sending ? 'Enviando...' : 'Enviar Mensagem'}
                   </button>
                 </form>
               )}
