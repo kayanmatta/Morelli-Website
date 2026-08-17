@@ -277,7 +277,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
             <div className="fup d3 mt-10">
               <button
                 onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-3 bg-brand-teal text-white font-josefin text-sm tracking-wider px-8 py-4 hover:bg-brand-teal-dark transition-colors duration-200"
+                className="inline-flex items-center gap-3 bg-brand-teal text-white font-josefin text-sm tracking-wider px-8 py-4 hover:bg-brand-teal-dark active:scale-95 transition-all duration-200 cursor-pointer"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                   <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
@@ -407,7 +407,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                   </ul>
                   <button
                     onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="mt-4 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-4 py-2 hover:bg-brand-teal hover:text-white transition-all duration-200 w-fit opacity-0 group-hover:opacity-100"
+                    className="mt-4 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-4 py-2 hover:bg-brand-teal hover:text-white active:scale-95 transition-all duration-200 w-fit opacity-0 group-hover:opacity-100 cursor-pointer"
                   >
                     Solicitar →
                   </button>
@@ -500,13 +500,13 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
               <div className="flex flex-wrap gap-4 md:justify-end">
                 <button
                   onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 bg-brand-teal text-white hover:bg-brand-teal-dark transition-colors"
+                  className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 bg-brand-teal text-white hover:bg-brand-teal-dark active:scale-95 transition-all cursor-pointer"
                 >
                   Fale Conosco
                 </button>
                 <a
                   href="tel:+551239295154"
-                  className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 border border-white/30 text-white hover:border-brand-teal hover:text-brand-teal transition-all"
+                  className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 border border-white/30 text-white hover:border-brand-teal hover:text-brand-teal active:scale-95 transition-all cursor-pointer"
                 >
                   (12) 3929-5154
                 </a>
@@ -529,7 +529,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
             </div>
             <button
               onClick={onBlogNav}
-              className="fup font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-3 hover:bg-brand-teal hover:text-white transition-all"
+              className="fup font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-3 hover:bg-brand-teal hover:text-white active:scale-95 transition-all cursor-pointer"
             >
               Ver todos os artigos →
             </button>
@@ -660,7 +660,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                   </p>
                   <button
                     onClick={() => setSent(false)}
-                    className="mt-6 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white transition-all"
+                    className="mt-6 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white active:scale-95 transition-all cursor-pointer"
                   >
                     Nova mensagem
                   </button>
@@ -736,7 +736,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                   <button
                     type="submit"
                     disabled={sending}
-                    className="w-full font-josefin text-xs tracking-[0.25em] uppercase bg-brand-brown text-white py-4 hover:bg-brand-teal transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full font-josefin text-xs tracking-[0.25em] uppercase bg-brand-brown text-white py-4 hover:bg-brand-teal active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {sending ? 'Enviando...' : 'Enviar Mensagem'}
                   </button>
@@ -794,10 +794,10 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
               © 2025-2026 Morelli Engenharia e Assessoria em Segurança do Trabalho
             </p>
             <div className="flex gap-6">
-              <button onClick={() => onNavigate({ name: 'privacy' })} className="font-josefin text-white/50 text-xs tracking-[0.1em] hover:text-brand-teal transition-colors">
+              <button onClick={() => onNavigate({ name: 'privacy' })} className="font-josefin text-white/50 text-xs tracking-[0.1em] hover:text-brand-teal active:opacity-50 transition-all cursor-pointer">
                 Política de Privacidade
               </button>
-              <button onClick={() => onNavigate({ name: 'terms' })} className="font-josefin text-white/50 text-xs tracking-[0.1em] hover:text-brand-teal transition-colors">
+              <button onClick={() => onNavigate({ name: 'terms' })} className="font-josefin text-white/50 text-xs tracking-[0.1em] hover:text-brand-teal active:opacity-50 transition-all cursor-pointer">
                 Termos de Uso
               </button>
             </div>

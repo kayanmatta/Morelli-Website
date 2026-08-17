@@ -64,7 +64,7 @@ export default function Navbar({ view, onNavigate }: Props) {
             <button
               key={l.label}
               onClick={l.action}
-              className={`font-josefin text-xs tracking-[0.2em] uppercase transition-colors duration-200 hover:text-brand-teal ${
+              className={`font-josefin text-xs tracking-[0.2em] uppercase transition-colors duration-200 hover:text-brand-teal active:text-brand-teal-dark cursor-pointer ${
                 isDark ? 'text-white/90' : 'text-brand-gray'
               }`}
             >
@@ -73,7 +73,7 @@ export default function Navbar({ view, onNavigate }: Props) {
           ))}
           <button
             onClick={() => scrollTo('contato')}
-            className="font-josefin text-xs tracking-[0.2em] uppercase px-6 py-2.5 bg-brand-teal text-white hover:bg-brand-teal-dark transition-colors duration-200"
+            className="font-josefin text-xs tracking-[0.2em] uppercase px-6 py-2.5 bg-brand-teal text-white hover:bg-brand-teal-dark active:scale-95 transition-all duration-200 cursor-pointer"
           >
             Orçamento
           </button>
@@ -102,7 +102,7 @@ export default function Navbar({ view, onNavigate }: Props) {
             <button
               key={l.label}
               onClick={l.action}
-              className="block w-full text-left px-6 py-4 font-josefin text-xs tracking-[0.2em] uppercase text-brand-gray hover:text-brand-teal hover:bg-brand-cream transition-colors"
+              className="block w-full text-left px-6 py-4 font-josefin text-xs tracking-[0.2em] uppercase text-brand-gray hover:text-brand-teal hover:bg-brand-cream active:bg-brand-cream/50 transition-colors cursor-pointer"
             >
               {l.label}
             </button>
@@ -110,7 +110,7 @@ export default function Navbar({ view, onNavigate }: Props) {
           <div className="px-6 py-4">
             <button
               onClick={() => scrollTo('contato')}
-              className="w-full bg-brand-teal text-white font-josefin text-xs tracking-[0.2em] uppercase py-3 hover:bg-brand-teal-dark transition-colors"
+              className="w-full bg-brand-teal text-white font-josefin text-xs tracking-[0.2em] uppercase py-3 hover:bg-brand-teal-dark active:scale-95 transition-all cursor-pointer"
             >
               Orçamento
             </button>
