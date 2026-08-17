@@ -71,7 +71,7 @@ export default function TermsPage({ onNavigate }: Props) {
 
           <section>
             <h2 className="font-josefin text-brand-brown font-semibold uppercase text-sm tracking-[0.1em] mb-3">9. Contato</h2>
-            <p>Para dúvidas sobre estes termos, entre em contato pelo e-mail <a href="mailto:contato@morelliengenharia.com.br" className="text-brand-teal hover:underline">contato@morelliengenharia.com.br</a> ou pelo telefone (12) 3929-5154.</p>
+            <p>Para dúvidas sobre estes termos, entre em contato pelo e-mail <a href="mailto:contato@morelliengenharia.com.br" className="text-brand-teal hover:underline">contato@morelliengenharia.com.br</a> ou pelo telefone (12) 3922-6658.</p>
           </section>
         </div>
       </div>

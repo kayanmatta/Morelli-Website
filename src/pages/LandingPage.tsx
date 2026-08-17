@@ -505,10 +505,10 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                   Fale Conosco
                 </button>
                 <a
-                  href="tel:+551239295154"
+                  href="tel:+551239226658"
                   className="font-josefin text-xs tracking-[0.2em] uppercase px-8 py-4 border border-white/30 text-white hover:border-brand-teal hover:text-brand-teal active:scale-95 transition-all cursor-pointer"
                 >
-                  (12) 3929-5154
+                  (12) 3922-6658
                 </a>
               </div>
             </div>
@@ -600,9 +600,9 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                       </svg>
                     ),
-                    label: 'Telefone',
-                    value: '(XX) XXXX-XXXX',
-                    href: 'tel:+551239295154',
+                    label: 'Telefone/WhatsApp',
+                    value: '(12) 3922-6658',
+                    href: 'tel:+551239226658',
                   },
                   {
                     icon: (
@@ -610,9 +610,9 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
                       </svg>
                     ),
-                    label: 'Celular',
-                    value: '(12) 99764-4911',
-                    href: 'tel:+5512997644911',
+                    label: 'WhatsApp',
+                    value: '(12) 3922-6658',
+                    href: 'https://wa.me/551239226658?text=Ol%C3%A1.%20Vim%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Morelli.',
                   },
                   {
                     icon: (
@@ -780,8 +780,8 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
               <div className="space-y-3 text-white/60 text-sm">
                 <p>Jeane Morelli</p>
                 <p>Engenheira de Segurança do Trabalho</p>
-                <a href="tel:+551239295154" className="block hover:text-brand-teal transition-colors">(12) 3929-5154</a>
-                <a href="tel:+5512997644911" className="block hover:text-brand-teal transition-colors">(12) 99764-4911</a>
+                <a href="tel:+551239226658" className="block hover:text-brand-teal transition-colors">(12) 3922-6658</a>
+                <a href="https://wa.me/551239226658" className="block hover:text-brand-teal transition-colors">WhatsApp</a>
                 <a href="mailto:contato@morelliengenharia.com.br" className="block hover:text-brand-teal transition-colors break-all">
                   contato@morelliengenharia.com.br
                 </a>
