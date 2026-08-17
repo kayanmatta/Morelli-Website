@@ -195,8 +195,8 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
     },
     {
       title: 'Riscos Psicossociais',
-      description: 'Mapeamento e avaliação de riscos psicossociais no PGR conforme NR-1, com metodologia Karasek (Demanda-Controle-Suporte). Obrigatório desde maio/2026.',
-      items: ['Avaliação NR-1 / PGR', 'Metodologia Karasek', 'Plano de Ações', 'ISO 45003:2021'],
+      description: 'Mapeamento e avaliação de riscos psicossociais no PGR conforme NR-1, com metodologia Demanda-Controle-Suporte. Obrigatório desde maio/2026.',
+      items: ['Avaliação NR-1 / PGR', 'Modelo Demanda-Controle-Suporte', 'Plano de Ações', 'ISO 45003:2021'],
       img: equipeImg,
     },
   ]

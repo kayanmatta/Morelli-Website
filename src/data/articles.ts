@@ -175,13 +175,13 @@ A Morelli Engenharia oferece o SESMT terceirizado completo, com toda a equipe mu
   },
   {
     id: 7,
-    title: "Riscos Psicossociais na NR-1: Obrigatoriedade, Metodologia Karasek e Como Implementar no PGR",
+    title: "Riscos Psicossociais na NR-1: Obrigatoriedade, Avaliação e Como Implementar no PGR",
     category: "Legislação",
     date: "26 de Maio, 2026",
     readTime: "12 min",
     imageKey: "equipe",
     excerpt:
-      "Desde 26 de maio de 2026, a avaliação de riscos psicossociais é obrigatória no PGR conforme a nova NR-1. Entenda a metodologia Karasek (Demanda-Controle-Suporte), os 5 fatores de risco e como implementar na sua empresa.",
+      "Desde 26 de maio de 2026, a avaliação de riscos psicossociais é obrigatória no PGR conforme a nova NR-1. Entenda o modelo Demanda-Controle-Suporte, os 5 fatores de risco e como implementar na sua empresa.",
     content: `A avaliação de riscos psicossociais passou a ser obrigatória no Gerenciamento de Riscos Ocupacionais (GRO) da NR-1 desde 26 de maio de 2026, conforme a Portaria MTE nº 1419/2024. Agora, toda empresa com empregados CLT deve incluir os fatores de risco psicossociais no PGR (Programa de Gerenciamento de Riscos), sob pena de autuação pela fiscalização do Ministério do Trabalho.
 
 **O que mudou na nova NR-1?**
@@ -203,9 +203,9 @@ Riscos psicossociais são fatores relacionados à organização, conteúdo e con
 - **Reconhecimento e Recompensa:** falta de valorização profissional, baixos salários, ausência de feedback, promoções injustas, ausência de perspectivas de crescimento.
 - **Conflito Trabalho-Vida Pessoal:** jornada excessiva, trabalho nos finais de semana, pressão para estar sempre disponível.
 
-**Metodologia de Avaliação: O Modelo de Karasek (Demanda-Controle-Suporte)**
+**Metodologia de Avaliação: O Modelo Demanda-Controle-Suporte**
 
-O Modelo Demanda-Controle, desenvolvido por Robert Karasek em 1979 e ampliado por Johnson & Hall em 1988 com o fator Suporte Social, é a metodologia mais reconhecida internacionalmente para avaliação de riscos psicossociais no trabalho.
+O Modelo Demanda-Controle-Suporte é a metodologia mais reconhecida internacionalmente para avaliação de riscos psicossociais no trabalho. Ele avalia como a combinação entre a demanda psicológica do trabalho, o grau de controle que o trabalhador tem sobre suas atividades e o suporte social disponível pode afetar o bem-estar e a saúde mental.
 
 O modelo avalia três dimensões:
 
@@ -213,7 +213,7 @@ O modelo avalia três dimensões:
 - **Controle sobre o Trabalho:** nível de autonomia para decidir como realizar tarefas, uso de habilidades e capacidade de influenciar o próprio ritmo.
 - **Apoio Social (Suporte):** nível de apoio oferecido por colegas e gestores para reduzir o impacto do estresse.
 
-**Os 4 Quadrantes do Modelo de Karasek**
+**Os 4 Quadrantes do Modelo Demanda-Controle**
 
 A partir da relação entre demanda e controle, o modelo define quatro tipos de trabalho:
 
@@ -228,7 +228,7 @@ O Suporte Social não altera a posição nos quadrantes, mas influencia diretame
 
 A implementação segue as etapas do GRO:
 
-- **Identificação dos perigos:** aplicação de questionários validados (modelo Karasek) com todos os colaboradores.
+- **Identificação dos perigos:** aplicação de questionários validados com todos os colaboradores.
 - **Avaliação dos riscos:** classificação dos resultados nos quadrantes demanda-controle-suporte.
 - **Medidas de prevenção:** para trabalho de alto estresse, reduzir carga de trabalho, flexibilizar prazos, aumentar autonomia, criar pausas obrigatórias e reforçar suporte social. Para trabalho ativo, manter desafios equilibrados. Para trabalho passivo, incentivar participação e reconhecimento.
 - **Monitoramento:** reavaliação periódica e acompanhamento dos indicadores de saúde mental.
@@ -246,6 +246,6 @@ A Morelli Engenharia conta com equipe especializada para implementação complet
 
 **Como a Morelli pode ajudar**
 
-A Morelli Engenharia oferece o serviço completo de Mapeamento e Avaliação de Riscos Psicossociais em conformidade com a NR-1 e o PGR, utilizando a metodologia Karasek (Demanda-Controle-Suporte). Nosso serviço inclui aplicação de questionários, análise dos resultados, classificação de riscos, plano de ações e medidas de prevenção integradas ao seu PGR. Entre em contato e solicite um orçamento.`,
+A Morelli Engenharia oferece o serviço completo de Mapeamento e Avaliação de Riscos Psicossociais em conformidade com a NR-1 e o PGR, utilizando metodologia reconhecida internacionalmente (Demanda-Controle-Suporte). Nosso serviço inclui aplicação de questionários, análise dos resultados, classificação de riscos, plano de ações e medidas de prevenção integradas ao seu PGR. Entre em contato e solicite um orçamento.`,
   },
 ]

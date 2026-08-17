@@ -127,12 +127,26 @@ export default function BlogPage({ view, onNavigate }: Props) {
                 const items = p.split('\n').filter((l) => l.startsWith('- '))
                 return (
                   <ul key={i} className="space-y-2 my-4">
-                    {items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3 text-brand-gray leading-relaxed">
-                        <span className="w-1.5 h-1.5 bg-brand-teal rounded-full mt-2 flex-shrink-0" />
-                        <span>{item.slice(2)}</span>
-                      </li>
-                    ))}
+                    {items.map((item, j) => {
+                      const text = item.slice(2)
+                      const parts = text.split(/(\*\*[^*]+\*\*)/)
+                      return (
+                        <li key={j} className="flex items-start gap-3 text-brand-gray leading-relaxed">
+                          <span className="w-1.5 h-1.5 bg-brand-teal rounded-full mt-2 flex-shrink-0" />
+                          <span>
+                            {parts.map((part, k) =>
+                              part.startsWith('**') ? (
+                                <strong key={k} className="text-brand-brown font-semibold">
+                                  {part.replace(/\*\*/g, '')}
+                                </strong>
+                              ) : (
+                                part
+                              )
+                            )}
+                          </span>
+                        </li>
+                      )
+                    })}
                   </ul>
                 )
               }

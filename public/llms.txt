@@ -8,7 +8,7 @@
 - [Treinamentos NR](https://morelliengenharia1.kayan-devweb.workers.dev/#treinamentos): Capacitações conforme Normas Regulamentadoras
 - [Laudos Técnicos](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Insalubridade, periculosidade, LTCAT, PPP
 - [Gestão em SST](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): PGR, PCMSO, SESMT Terceirizado
-- [Riscos Psicossociais NR-1](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Mapeamento e avaliação psicossocial com metodologia Karasek
+- [Riscos Psicossociais NR-1](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Mapeamento e avaliação psicossocial com metodologia Demanda-Controle-Suporte
 
 ## Blog
 
