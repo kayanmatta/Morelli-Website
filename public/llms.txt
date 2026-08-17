@@ -8,6 +8,7 @@
 - [Treinamentos NR](https://morelliengenharia1.kayan-devweb.workers.dev/#treinamentos): Capacitações conforme Normas Regulamentadoras
 - [Laudos Técnicos](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Insalubridade, periculosidade, LTCAT, PPP
 - [Gestão em SST](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): PGR, PCMSO, SESMT Terceirizado
+- [Riscos Psicossociais NR-1](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Mapeamento e avaliação psicossocial com metodologia Karasek
 
 ## Blog
 
@@ -15,6 +16,5 @@
 
 ## Contato
 
-- Telefone: (12) 3929-5154
-- Celular: (12) 99764-4911
+- Telefone/WhatsApp: (12) 3922-6658
 - E-mail: contato@morelliengenharia.com.br
