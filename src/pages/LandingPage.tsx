@@ -128,37 +128,18 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
     e.preventDefault()
     setSending(true)
     try {
-      const htmlMessage = `
-        <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
-          <div style="background:#3a2319;padding:20px;text-align:center;">
-            <h2 style="color:#02b5a5;margin:0;font-size:18px;letter-spacing:2px;">MORELLI ENGENHARIA</h2>
-            <p style="color:#fff;margin:5px 0 0;font-size:12px;">Nova solicitação de orçamento</p>
-          </div>
-          <div style="background:#f5f2ee;padding:24px;">
-            <table style="width:100%;border-collapse:collapse;">
-              <tr><td style="padding:8px 0;font-weight:bold;color:#3a2319;width:100px;">Nome</td><td style="padding:8px 0;color:#58595b;">${formData.nome}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:bold;color:#3a2319;border-top:1px solid #ddd;">Empresa</td><td style="padding:8px 0;color:#58595b;border-top:1px solid #ddd;">${formData.empresa || '—'}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:bold;color:#3a2319;border-top:1px solid #ddd;">E-mail</td><td style="padding:8px 0;border-top:1px solid #ddd;"><a href="mailto:${formData.email}" style="color:#02b5a5;">${formData.email}</a></td></tr>
-              <tr><td style="padding:8px 0;font-weight:bold;color:#3a2319;border-top:1px solid #ddd;">Telefone</td><td style="padding:8px 0;color:#58595b;border-top:1px solid #ddd;">${formData.telefone ? `<a href="tel:${formData.telefone}" style="color:#02b5a5;">${formData.telefone}</a>` : '—'}</td></tr>
-            </table>
-            <div style="margin-top:20px;padding:16px;background:#fff;border-left:4px solid #02b5a5;">
-              <p style="margin:0 0 8px;font-weight:bold;color:#3a2319;font-size:13px;">MENSAGEM</p>
-              <p style="margin:0;color:#58595b;line-height:1.6;">${formData.mensagem}</p>
-            </div>
-          </div>
-          <div style="background:#3a2319;padding:12px;text-align:center;">
-            <p style="color:#fff8;font-size:11px;margin:0;">Enviado pelo site morelliengenharia.com.br</p>
-          </div>
-        </div>
-      `
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: 'a42e2e59-7bc7-425d-8404-2bcc4315b4a6',
-          subject: `Orçamento - ${formData.nome || 'Novo contato'}`,
+          subject: `📋 Orçamento - ${formData.nome || 'Novo contato'}`,
           from_name: 'Morelli Engenharia',
-          message: htmlMessage,
+          Nome: formData.nome,
+          Empresa: formData.empresa || 'Não informada',
+          Email: formData.email,
+          Telefone: formData.telefone || 'Não informado',
+          Mensagem: formData.mensagem,
         }),
       })
       const json = await res.json()
