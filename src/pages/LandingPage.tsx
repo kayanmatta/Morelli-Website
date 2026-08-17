@@ -103,9 +103,10 @@ function StatItem({ value, suffix, label }: { value: number; suffix: string; lab
 interface Props {
   onBlogNav: () => void
   onArticleClick: (id: number) => void
+  onNavigate: (v: AppView) => void
 }
 
-export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
+export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: Props) {
   const [formData, setFormData] = useState({ nome: '', empresa: '', email: '', telefone: '', mensagem: '' })
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
@@ -793,11 +794,12 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
               © 2025-2026 Morelli Engenharia e Assessoria em Segurança do Trabalho
             </p>
             <div className="flex gap-6">
-              {['Política de Privacidade', 'Termos de Uso'].map((l) => (
-                <button key={l} className="font-josefin text-white/50 text-xs tracking-[0.1em] hover:text-brand-teal transition-colors">
-                  {l}
-                </button>
-              ))}
+              <button onClick={() => onNavigate({ name: 'privacy' })} className="font-josefin text-white/50 text-xs tracking-[0.1em] hover:text-brand-teal transition-colors">
+                Política de Privacidade
+              </button>
+              <button onClick={() => onNavigate({ name: 'terms' })} className="font-josefin text-white/50 text-xs tracking-[0.1em] hover:text-brand-teal transition-colors">
+                Termos de Uso
+              </button>
             </div>
           </div>
         </div>

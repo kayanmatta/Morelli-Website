@@ -3,12 +3,16 @@ import Navbar from './components/Navbar'
 import LandingPage from './pages/LandingPage'
 import BlogPage from './pages/BlogPage'
 import TrainingsPage from './pages/TrainingsPage'
+import PrivacyPage from './pages/PrivacyPage'
+import TermsPage from './pages/TermsPage'
 
 export type AppView =
   | { name: 'landing' }
   | { name: 'blog' }
   | { name: 'article'; id: number }
   | { name: 'trainings' }
+  | { name: 'privacy' }
+  | { name: 'terms' }
 
 export default function App() {
   const [view, setView] = useState<AppView>({ name: 'landing' })
@@ -25,6 +29,7 @@ export default function App() {
         <LandingPage
           onBlogNav={() => navigate({ name: 'blog' })}
           onArticleClick={(id) => navigate({ name: 'article', id })}
+          onNavigate={navigate}
         />
       )}
       {(view.name === 'blog' || view.name === 'article') && (
@@ -32,6 +37,12 @@ export default function App() {
       )}
       {view.name === 'trainings' && (
         <TrainingsPage onNavigate={navigate} />
+      )}
+      {view.name === 'privacy' && (
+        <PrivacyPage onNavigate={navigate} />
+      )}
+      {view.name === 'terms' && (
+        <TermsPage onNavigate={navigate} />
       )}
 
       {/* WhatsApp floating button */}
