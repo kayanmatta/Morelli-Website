@@ -36,7 +36,7 @@ export default function App() {
 
       {/* WhatsApp floating button */}
       <a
-        href="#"
+        href="https://wa.me/551239226658?text=Ol%C3%A1.%20Vim%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Morelli."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[#20BD5A] transition-all duration-300 hover:scale-110"
