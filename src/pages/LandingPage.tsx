@@ -193,6 +193,12 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
       items: ['PGR / PPRA', 'PCMSO', 'SESMT Terceirizado', 'Consultoria em NRs'],
       img: heroSstImg,
     },
+    {
+      title: 'Riscos Psicossociais',
+      description: 'Mapeamento e avaliação de riscos psicossociais no PGR conforme NR-1, com metodologia Karasek (Demanda-Controle-Suporte). Obrigatório desde maio/2026.',
+      items: ['Avaliação NR-1 / PGR', 'Metodologia Karasek', 'Plano de Ações', 'ISO 45003:2021'],
+      img: equipeImg,
+    },
   ]
 
   const diferenciais = [
@@ -372,7 +378,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {services.map((s, i) => (
               <div
                 key={s.title}

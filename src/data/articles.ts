@@ -175,43 +175,77 @@ A Morelli Engenharia oferece o SESMT terceirizado completo, com toda a equipe mu
   },
   {
     id: 7,
-    title: "Riscos Psicossociais no Trabalho: o que são e como gerenciar",
-    category: "Saúde Ocupacional",
-    date: "1 de Março, 2025",
-    readTime: "8 min",
+    title: "Riscos Psicossociais na NR-1: Obrigatoriedade, Metodologia Karasek e Como Implementar no PGR",
+    category: "Legislação",
+    date: "26 de Maio, 2026",
+    readTime: "12 min",
     imageKey: "equipe",
     excerpt:
-      "Os riscos psicossociais estão cada vez mais presentes nos ambientes de trabalho. Entenda o que são, como afetam a saúde mental e quais as obrigações da empresa.",
-    content: `Os riscos psicossociais no trabalho referem-se às condições de trabalho que afetam a saúde mental e o bem-estar psicológico dos trabalhadores. Estresse, assédio moral, sobrecarga de trabalho, falta de autonomia e conflitos interpessoais são exemplos de fatores psicossociais que podem gerar adoecimento.
+      "Desde 26 de maio de 2026, a avaliação de riscos psicossociais é obrigatória no PGR conforme a nova NR-1. Entenda a metodologia Karasek (Demanda-Controle-Suporte), os 5 fatores de risco e como implementar na sua empresa.",
+    content: `A avaliação de riscos psicossociais passou a ser obrigatória no Gerenciamento de Riscos Ocupacionais (GRO) da NR-1 desde 26 de maio de 2026, conforme a Portaria MTE nº 1419/2024. Agora, toda empresa com empregados CLT deve incluir os fatores de risco psicossociais no PGR (Programa de Gerenciamento de Riscos), sob pena de autuação pela fiscalização do Ministério do Trabalho.
 
-Com as mudanças no mundo do trabalho — pressão por produtividade, home office, precarização — os transtornos mentais relacionados ao trabalho cresceram significativamente. A depressão, a ansiedade e a Síndrome de Burnout já são consideradas doenças ocupacionais quando comprovada a relação com o trabalho.
+**O que mudou na nova NR-1?**
 
-**O que diz a legislação?**
+A NR-1 atualizada trouxe duas mudanças expressivas:
 
-A NR-1, atualizada em 2022, incluiu explicitamente os riscos psicossociais como parte do gerenciamento de riscos ocupacionais. Isso significa que as empresas devem identificar, avaliar e controlar esses riscos no PGR, assim como fazem com os riscos físicos, químicos e biológicos.
+- O item 1.5.3.1.4 agora exige que o gerenciamento de riscos ocupacionais abranja os riscos decorrentes dos fatores ergonômicos, incluindo explicitamente os fatores de risco psicossociais relacionados ao trabalho.
+- O item 1.5.3.2.1 passou a exigir que a organização considere as condições de trabalho nos termos da NR-17, incluindo os fatores de risco psicossociais relacionados ao trabalho.
 
-A Lei 14.838/2024 tornou obrigatória a implementação de programas de combate ao assédio moral e sexual no trabalho, reforçando a responsabilidade das empresas em criar ambientes psicologicamente saudáveis.
+Na prática, isso significa que não basta avaliar riscos físicos, químicos, biológicos e de acidentes — a saúde mental dos trabalhadores agora deve ser avaliada com a mesma rigidez técnica.
 
-**Principais fatores de risco psicossocial**
+**O que são riscos psicossociais?**
 
-- Sobrecarga de trabalho e jornadas excessivas
-- Pressão por metas inatingíveis
-- Falta de reconhecimento e feedback
-- Assédio moral ou sexual
-- Isolamento social (especialmente em home office)
-- Insegurança quanto à estabilidade no emprego
-- Conflitos entre vida pessoal e profissional
+Riscos psicossociais são fatores relacionados à organização, conteúdo e condições de trabalho que podem afetar a saúde mental e o bem-estar psicológico dos colaboradores. De acordo com a ISO 45003:2021, esses riscos são classificados em cinco grandes categorias:
 
-**Consequências para a empresa**
+- **Demandas do Trabalho:** carga excessiva, ritmo acelerado, prazos curtos, alta exigência mental ou física, tarefas simultâneas.
+- **Autonomia e Controle:** falta de liberdade para decidir como executar tarefas, trabalho repetitivo sem espaço para iniciativa, supervisão rígida.
+- **Relações Interpessoais:** qualidade da relação entre colegas e gestores, assédio moral, conflitos no ambiente de trabalho, falta de suporte.
+- **Reconhecimento e Recompensa:** falta de valorização profissional, baixos salários, ausência de feedback, promoções injustas, ausência de perspectivas de crescimento.
+- **Conflito Trabalho-Vida Pessoal:** jornada excessiva, trabalho nos finais de semana, pressão para estar sempre disponível.
 
-Empresas que negligenciam os riscos psicossociais enfrentam aumento do absenteísmo, alta rotatividade, queda de produtividade, ações trabalhistas e indenizações por danos morais. O custo de não prevenir é muito maior do que o investimento em prevenção.
+**Metodologia de Avaliação: O Modelo de Karasek (Demanda-Controle-Suporte)**
 
-**Como implementar a gestão de riscos psicossociais**
+O Modelo Demanda-Controle, desenvolvido por Robert Karasek em 1979 e ampliado por Johnson & Hall em 1988 com o fator Suporte Social, é a metodologia mais reconhecida internacionalmente para avaliação de riscos psicossociais no trabalho.
 
-A gestão eficaz inclui: aplicação de questionários validados para avaliação do clima organizacional, análise ergonômica do trabalho que considere os aspectos cognitivos e psíquicos, capacitação de lideranças para identificação precoce de sofrimento mental, canais de denúncia seguros e confidenciais, e programas de promoção da saúde mental.
+O modelo avalia três dimensões:
+
+- **Demanda Psicológica:** pressão mental no trabalho, incluindo prazos, volume de tarefas e necessidade de lidar com problemas complexos.
+- **Controle sobre o Trabalho:** nível de autonomia para decidir como realizar tarefas, uso de habilidades e capacidade de influenciar o próprio ritmo.
+- **Apoio Social (Suporte):** nível de apoio oferecido por colegas e gestores para reduzir o impacto do estresse.
+
+**Os 4 Quadrantes do Modelo de Karasek**
+
+A partir da relação entre demanda e controle, o modelo define quatro tipos de trabalho:
+
+- **Trabalho de Alto Estresse (alta demanda + baixo controle):** maior incidência de estresse, burnout e transtornos psicológicos. Exemplos: profissionais da saúde, call center, motoristas.
+- **Trabalho Ativo (alta demanda + alto controle):** pode ser estressante, mas geralmente positivo se houver suporte adequado. Exemplos: engenheiros, gestores, empreendedores.
+- **Trabalho Passivo (baixa demanda + baixo controle):** pode gerar desmotivação e tédio, reduzindo o desenvolvimento profissional.
+- **Trabalho de Baixa Pressão (baixa demanda + alto controle):** ambiente tranquilo, mas com pouco estímulo ao crescimento.
+
+O Suporte Social não altera a posição nos quadrantes, mas influencia diretamente os impactos do estresse. Trabalhadores com alto suporte social lidam melhor com demandas elevadas.
+
+**Como implementar a avaliação psicossocial no PGR**
+
+A implementação segue as etapas do GRO:
+
+- **Identificação dos perigos:** aplicação de questionários validados (modelo Karasek) com todos os colaboradores.
+- **Avaliação dos riscos:** classificação dos resultados nos quadrantes demanda-controle-suporte.
+- **Medidas de prevenção:** para trabalho de alto estresse, reduzir carga de trabalho, flexibilizar prazos, aumentar autonomia, criar pausas obrigatórias e reforçar suporte social. Para trabalho ativo, manter desafios equilibrados. Para trabalho passivo, incentivar participação e reconhecimento.
+- **Monitoramento:** reavaliação periódica e acompanhamento dos indicadores de saúde mental.
+
+**Penalidades por não conformidade**
+
+Empresas que não incluem a avaliação de riscos psicossociais no PGR estão sujeitas a autuações pela fiscalização do Ministério do Trabalho, com multas que variam conforme a gravidade e reincidência. Além disso, ficam expostas a ações trabalhistas por doenças ocupacionais relacionadas à saúde mental.
+
+**Equipe técnica da Morelli Engenharia**
+
+A Morelli Engenharia conta com equipe especializada para implementação completa da avaliação de riscos psicossociais no PGR:
+
+- **Jeane Morelli Toledo:** Engenheira de Meio Ambiente e Engenheira de Segurança do Trabalho, especialista em análise ambiental com ampla experiência na gestão de riscos ocupacionais. Responsável pela validação e estruturação da ferramenta de levantamento e análise dos riscos psicossociais.
+- **Edgar da Silva Toledo:** Engenheiro Eletricista e Engenheiro de Segurança do Trabalho, com ampla experiência na gestão de riscos ocupacionais. Responsável pela coordenação do estudo e implementação da metodologia para análise de riscos psicossociais no PGR.
 
 **Como a Morelli pode ajudar**
 
-A Morelli Engenharia oferece assessoria completa na identificação e gestão de riscos psicossociais, integrando essa avaliação ao PGR e ao PCMSO da sua empresa. Nossa equipe multidisciplinar inclui psicólogos organizacionais e engenheiros de segurança especializados em saúde mental no trabalho. Entre em contato para saber como podemos ajudar sua empresa a criar um ambiente mais saudável e produtivo.`,
+A Morelli Engenharia oferece o serviço completo de Mapeamento e Avaliação de Riscos Psicossociais em conformidade com a NR-1 e o PGR, utilizando a metodologia Karasek (Demanda-Controle-Suporte). Nosso serviço inclui aplicação de questionários, análise dos resultados, classificação de riscos, plano de ações e medidas de prevenção integradas ao seu PGR. Entre em contato e solicite um orçamento.`,
   },
 ]
