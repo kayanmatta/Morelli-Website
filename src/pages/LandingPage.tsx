@@ -109,6 +109,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
   const [formData, setFormData] = useState({ nome: '', empresa: '', email: '', telefone: '', mensagem: '' })
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
+  const [honeypot, setHoneypot] = useState('')
 
   const heroRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -127,6 +128,11 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSending(true)
+    // Honeypot check - if filled, it's a bot
+    if (honeypot) {
+      setSending(false)
+      return
+    }
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -140,6 +146,7 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
           Email: formData.email,
           Telefone: formData.telefone || 'Não informado',
           Mensagem: formData.mensagem,
+          botcheck: honeypot,
         }),
       })
       const json = await res.json()
@@ -714,6 +721,17 @@ export default function LandingPage({ onBlogNav, onArticleClick }: Props) {
                       placeholder="Descreva brevemente sua necessidade..."
                     />
                   </div>
+                  {/* Honeypot - hidden from humans, bots will fill it */}
+                  <input
+                    type="text"
+                    name="botcheck"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+                    aria-hidden="true"
+                  />
                   <button
                     type="submit"
                     disabled={sending}
