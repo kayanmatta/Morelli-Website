@@ -454,17 +454,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
 
       {/* ── DIFERENCIAIS ─────────────────────────────────────────────── */}
       <section className="py-28 bg-brand-brown relative overflow-hidden">
-        {/* Background geometric watermark */}
-        <div
-          className="absolute right-0 top-0 w-96 h-96 opacity-5"
-          style={{
-            background: 'linear-gradient(135deg, #02b5a5 0%, transparent 60%)',
-          }}
-        />
-        <div
-          className="absolute -left-20 bottom-0 w-80 h-80 border border-brand-teal/10"
-          style={{ transform: 'rotate(30deg)' }}
-        />
+
 
         <div ref={difRef} className="max-w-7xl mx-auto px-8 relative z-10">
           <div className="text-center mb-16">
