@@ -8,6 +8,7 @@ import higieneImg from '@/imports/higiene.jpg'
 import treinamentoImg from '@/imports/treinamento.jpg'
 import heroSstImg from '@/imports/hero-sst.jpg'
 import jeanEdgarImg from '@/imports/Jeane&Edgar.jpg'
+import saudeImg from '@/imports/saude-ocupacional.png'
 import logoWhite from '@/imports/Logo_sem_fundo.png'
 
 import logoVanguardia from '@/imports/empresas/VANGUARDA-LOGO.svg'
@@ -199,6 +200,12 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
       items: ['Avaliação NR-1 / PGR', 'Modelo Demanda-Controle-Suporte', 'Plano de Ações', 'ISO 45003:2021'],
       img: equipeImg,
     },
+    {
+      title: 'Saúde do Trabalho',
+      description: 'Implementamos práticas ocupacionais que promovem bem-estar e segurança no ambiente de trabalho.',
+      items: ['Controle Médico e Saúde Ocupacional', 'Exames Clínicos e Complementares', 'Gestão de Eventos do e-Social', 'Serviços essenciais de saúde ocupacional'],
+      img: saudeImg,
+    },
   ]
 
   const diferenciais = [
@@ -247,7 +254,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative min-h-screen flex items-center overflow-hidden"
+        className="relative min-h-screen flex items-center overflow-hidden pt-5"
       >
         <img
           src={heroImg}
@@ -268,7 +275,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
         <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-8 w-full py-20">
           <div className="max-w-xl">
             <p className="fup font-josefin font-bold text-brand-teal text-xs tracking-[0.28em] uppercase mb-6">
-              Engenharia e Segurança do Trabalho
+              Engenharia, Saúde do Trabalho e Meio Ambiente
             </p>
             <h1 className="fup d1 font-josefin text-white font-bold leading-[1.08]" style={{ fontSize: 'clamp(2.6rem, 6vw, 4.2rem)' }}>
               Sua empresa<br />
@@ -276,9 +283,8 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
               crescer.
             </h1>
             <div className="fup d2 mt-6 w-14 h-1 bg-brand-teal" />
-            <p className="fup d2 mt-6 text-white/80 text-base leading-relaxed max-w-sm">
-              Cuidamos da segurança, da conformidade e da gestão dos riscos para que você
-              possa focar no que realmente importa: o seu negócio.
+            <p className="fup d2 mt-6 text-white/80 text-base leading-relaxed max-w-md">
+              Oferecemos serviços completos e personalizados para proteger sua empresa, promover o bem-estar dos seus colaboradores e assegurar práticas sustentáveis.
             </p>
             <div className="fup d3 mt-10">
               <button
@@ -378,7 +384,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
             {services.map((s, i) => (
               <div
                 key={s.title}
@@ -423,6 +429,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
           </div>
         </div>
       </section>
+
 
       {/* ── EMPRESAS ───────────────────────────────────────────────── */}
       <section className="bg-brand-teal py-10 overflow-hidden">
