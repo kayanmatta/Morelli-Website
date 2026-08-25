@@ -275,18 +275,19 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
         <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-8 w-full py-20">
           <div className="max-w-xl">
             <p className="fup font-josefin font-bold text-brand-teal text-xs tracking-[0.28em] uppercase mb-6">
-              Engenharia, Saúde do Trabalho e Meio Ambiente
+              Soluções Integradas em
             </p>
-            <h1 className="fup d1 font-josefin text-white font-bold leading-[1.08]" style={{ fontSize: 'clamp(2.6rem, 6vw, 4.2rem)' }}>
-              Sua empresa<br />
-              <span className="text-brand-teal">segura</span> para<br />
-              crescer.
+            <h1 className="fup d1 font-josefin text-white font-bold leading-[1.12]" style={{ fontSize: 'clamp(2.1rem, 4.6vw, 3.5rem)' }}>
+              Engenharia, <span className="text-brand-teal">Saúde do Trabalho</span> e Meio Ambiente.
             </h1>
             <div className="fup d2 mt-6 w-14 h-1 bg-brand-teal" />
             <p className="fup d2 mt-6 text-white/80 text-base leading-relaxed max-w-md">
               Oferecemos serviços completos e personalizados para proteger sua empresa, promover o bem-estar dos seus colaboradores e assegurar práticas sustentáveis.
             </p>
-            <div className="fup d3 mt-10">
+            <p className="fup d3 mt-4 text-white/70 text-base italic leading-relaxed max-w-md">
+              Descubra como nossas soluções podem transformar a segurança, a saúde e a sustentabilidade no seu ambiente de trabalho.
+            </p>
+            <div className="fup d4 mt-10">
               <button
                 onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex items-center gap-3 bg-brand-teal text-white font-josefin text-sm tracking-wider px-8 py-4 hover:bg-brand-teal-dark active:scale-95 transition-all duration-200 cursor-pointer"
@@ -325,34 +326,46 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="fup font-josefin text-brand-teal text-xs tracking-[0.3em] uppercase mb-4">
-                Quem somos
+                Morelli Engenharia e Saúde do Trabalho
               </p>
-              <h2 className="fup d1 font-josefin font-bold uppercase leading-tight" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', letterSpacing: '0.04em' }}>
-                <span className="text-brand-brown">Segurança do Trabalho</span><br />
-                <span className="text-brand-teal">como prioridade</span>
+              <h2 className="fup d1 font-josefin font-bold leading-tight" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', letterSpacing: '0.02em' }}>
+                <span className="text-brand-brown">Quem somos</span>
               </h2>
               <div className="fup d1 mt-4 w-12 h-1 bg-brand-brown" />
               <p className="fup d2 mt-7 text-brand-gray leading-relaxed">
-                A <strong className="text-brand-brown">Morelli Engenharia e Assessoria</strong> é especializada em Engenharia e Segurança
-                do Trabalho, atuando com comprometimento e ética na proteção da saúde e integridade
-                dos colaboradores, alinhando segurança e conformidade para as empresas que assessoramos.
+                A <strong className="text-brand-brown">Morelli Engenharia e Saúde do Trabalho</strong> é referência em soluções
+                integradas de Engenharia, Saúde Ocupacional e Meio Ambiente. Nossa equipe conta com
+                engenheiros, técnicos e higienistas ocupacionais altamente capacitados, prontos para
+                atender as necessidades legais e personalizadas de cada cliente.
               </p>
-              <p className="fup d3 mt-4 text-brand-gray leading-relaxed">
-                Com ampla experiência de atuação, atendemos empresas dos mais variados segmentos
-                — indústria, comércio e prestação de serviços. Oferecemos soluções personalizadas,
-                auditorias técnicas, laudos periciais e suporte contínuo para garantir que sua empresa
-                opere com risco controlado e em plena conformidade com as Normas Regulamentadoras (NRs).
-              </p>
-              <div className="fup d3 mt-8 flex flex-wrap gap-3">
-                {['CREA Habilitado', 'NR Certificadas', 'Documentação Completa', 'Suporte Contínuo'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-flex items-center gap-1.5 border border-brand-gray/30 text-brand-gray font-josefin text-xs tracking-[0.15em] uppercase px-3 py-1.5"
-                  >
-                    <span className="text-brand-teal">•</span>
-                    {tag}
-                  </span>
-                ))}
+              <div className="fup d3 mt-9 space-y-7">
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 text-brand-teal flex-shrink-0">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+                      <circle cx="12" cy="6.75" r="2.25" />
+                      <path strokeLinecap="round" d="M12 2.9v1.1M12 9.5v1.1M8.15 6.75h1.1M14.75 6.75h1.1M9.25 4l.8.8M13.95 8.7l.8.8M14.75 4l-.8.8M10.05 8.7l-.8.8" />
+                      <path strokeLinecap="round" d="M4.75 20.5c.9-3.7 3.8-5.9 7.25-5.9s6.35 2.2 7.25 5.9" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 14.9l-.9 1.75.9 2.85.9-2.85-.9-1.75z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-josefin text-brand-brown font-bold text-lg leading-snug">Mais de 10 anos</h3>
+                    <p className="text-brand-gray text-sm mt-0.5">de experiência no mercado</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 text-brand-teal flex-shrink-0">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7.25 10.75v9.5H4.5a1 1 0 01-1-1v-7.5a1 1 0 011-1h2.75z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7.25 10.75l3.5-6.15a1.95 1.95 0 011.95 1.95v3.2h4.55a2 2 0 011.98 2.31l-.72 4.6a2 2 0 01-1.98 1.69H7.25" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.9 3.1l.68 1.38 1.52.22-1.1 1.07.26 1.52-1.36-.72-1.36.72.26-1.52-1.1-1.07 1.52-.22.68-1.38z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-josefin text-brand-brown font-bold text-lg leading-snug">Equipe Multidisciplinar</h3>
+                    <p className="text-brand-gray text-sm mt-0.5">com know-how técnico</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -402,14 +415,14 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                 {/* Teal left border reveal */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-teal scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom" />
 
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <h3 className="font-josefin text-white font-semibold uppercase text-base tracking-[0.1em] leading-snug">
+                <div className="absolute inset-0 p-6 flex flex-col overflow-hidden group-hover:overflow-y-auto overscroll-contain [scrollbar-width:thin] [scrollbar-color:#02b5a5_transparent] [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:bg-brand-teal [&::-webkit-scrollbar-track]:bg-transparent">
+                  <h3 className="mt-auto shrink-0 font-josefin text-white font-semibold uppercase text-base tracking-[0.1em] leading-snug">
                     {s.title}
                   </h3>
-                  <p className="mt-3 text-white/70 text-sm leading-relaxed max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500">
+                  <p className="mt-3 shrink-0 text-white/70 text-sm leading-relaxed max-h-0 group-hover:max-h-56 overflow-hidden transition-all duration-500">
                     {s.description}
                   </p>
-                  <ul className="mt-3 space-y-1 max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 delay-75">
+                  <ul className="mt-3 shrink-0 space-y-1 max-h-0 group-hover:max-h-56 overflow-hidden transition-all duration-500 delay-75">
                     {s.items.map((item) => (
                       <li key={item} className="flex items-center gap-2 text-brand-teal text-xs font-josefin tracking-wider">
                         <span className="w-1 h-1 bg-brand-teal rounded-full flex-shrink-0" />
@@ -419,7 +432,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                   </ul>
                   <button
                     onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="mt-4 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-4 py-2 hover:bg-brand-teal hover:text-white active:scale-95 transition-all duration-200 w-fit opacity-0 group-hover:opacity-100 cursor-pointer"
+                    className="mt-4 shrink-0 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-4 py-2 hover:bg-brand-teal hover:text-white active:scale-95 transition-all duration-200 w-fit opacity-0 group-hover:opacity-100 cursor-pointer"
                   >
                     Solicitar →
                   </button>
