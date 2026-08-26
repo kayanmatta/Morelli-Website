@@ -1,4 +1,4 @@
-﻿import { useRef, useEffect, useState } from 'react'
+﻿ import { useRef, useEffect, useState } from 'react'
 import { AppView } from '../App'
 import { articles } from '../data/articles'
 
@@ -373,9 +373,9 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
               <img
                 src={jeanEdgarImg}
                 alt="Jeane e Edgar Morelli — sócios da Morelli Engenharia"
-                width={600}
-                height={520}
-                className="w-full object-cover object-top max-h-[520px] rounded-xl"
+                width={1032}
+                height={1280}
+                className="w-full h-auto rounded-xl"
               />
             </div>
           </div>
