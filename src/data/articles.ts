@@ -1,8 +1,10 @@
 export interface Article {
   id: number
+  slug: string
   title: string
   category: string
   date: string
+  dateISO: string
   readTime: string
   excerpt: string
   content: string
@@ -12,9 +14,11 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: 1,
+    slug: 'pgr-por-que-atualizar',
     title: "Por que sua empresa precisa de um PGR atualizado?",
     category: "Legislação",
     date: "8 de Janeiro, 2025",
+    dateISO: "2025-01-08",
     readTime: "5 min",
     imageKey: "hero",
     excerpt:
@@ -41,9 +45,11 @@ Nossa equipe de engenheiros especializados realiza o diagnóstico completo das c
   },
   {
     id: 2,
+    slug: 'pcmso-protecao-saude-do-trabalhador',
     title: "PCMSO: proteção à saúde do trabalhador e conformidade legal",
     category: "Saúde Ocupacional",
     date: "15 de Janeiro, 2025",
+    dateISO: "2025-01-15",
     readTime: "6 min",
     imageKey: "equipe",
     excerpt:
@@ -66,9 +72,11 @@ Empresas sem PCMSO ou com programa desatualizado estão sujeitas a multas signif
   },
   {
     id: 3,
+    slug: 'nr-35-trabalho-em-altura',
     title: "NR-35: trabalho em altura e as responsabilidades da empresa",
     category: "Treinamentos",
     date: "22 de Janeiro, 2025",
+    dateISO: "2025-01-22",
     readTime: "4 min",
     imageKey: "treinamento",
     excerpt:
@@ -91,9 +99,11 @@ Oferecemos treinamentos de NR-35 ministrados por profissionais habilitados, com 
   },
   {
     id: 4,
+    slug: 'insalubridade-vs-periculosidade',
     title: "Insalubridade e periculosidade: entenda as diferenças",
     category: "Laudos Técnicos",
     date: "5 de Fevereiro, 2025",
+    dateISO: "2025-02-05",
     readTime: "7 min",
     imageKey: "higiene",
     excerpt:
@@ -118,9 +128,11 @@ Ambos os adicionais devem ser caracterizados por meio de perícia realizada por 
   },
   {
     id: 5,
-    title: "Treinamentos obrigatórios: sua empresa está em dia em 2025?",
+    slug: 'treinamentos-obrigatorios',
+    title: "Treinamentos obrigatórios: sua empresa está em dia?",
     category: "Treinamentos",
     date: "12 de Fevereiro, 2025",
+    dateISO: "2025-02-12",
     readTime: "5 min",
     imageKey: "treinamento",
     excerpt:
@@ -146,9 +158,11 @@ Todos os treinamentos devem ser documentados com listas de presença, conteúdo 
   },
   {
     id: 6,
+    slug: 'sesmt-terceirizado',
     title: "SESMT terceirizado: a solução para empresas de médio porte",
     category: "Gestão de SST",
     date: "20 de Fevereiro, 2025",
+    dateISO: "2025-02-20",
     readTime: "6 min",
     imageKey: "equipe",
     excerpt:
@@ -175,9 +189,11 @@ A Morelli Engenharia oferece o SESMT terceirizado completo, com toda a equipe mu
   },
   {
     id: 7,
+    slug: 'riscos-psicossociais-nr-1',
     title: "Riscos Psicossociais na NR-1: Obrigatoriedade, Avaliação e Como Implementar no PGR",
     category: "Legislação",
     date: "26 de Maio, 2026",
+    dateISO: "2026-05-26",
     readTime: "12 min",
     imageKey: "equipe",
     excerpt:

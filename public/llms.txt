@@ -10,9 +10,20 @@
 - [Gestão em SST](https://morelliengenharia.com.br/#servicos): PGR, PCMSO, SESMT Terceirizado
 - [Riscos Psicossociais NR-1](https://morelliengenharia.com.br/#servicos): Mapeamento e avaliação psicossocial com metodologia Demanda-Controle-Suporte
 
+## Treinamentos
+
+- [Todos os Treinamentos NR](https://morelliengenharia.com.br/treinamentos): Catálogo completo de treinamentos obrigatórios
+
 ## Blog
 
-- [Blog e Artigos](https://morelliengenharia.com.br/#blog): Conteúdo sobre segurança e saúde do trabalho
+- [Blog e Artigos](https://morelliengenharia.com.br/blog): Índice de artigos sobre SST
+- [PGR atualizado](https://morelliengenharia.com.br/blog/pgr-por-que-atualizar): Por que sua empresa precisa de um PGR atualizado
+- [PCMSO](https://morelliengenharia.com.br/blog/pcmso-protecao-saude-do-trabalhador): Proteção à saúde do trabalhador e conformidade legal
+- [NR-35 Trabalho em Altura](https://morelliengenharia.com.br/blog/nr-35-trabalho-em-altura): Responsabilidades da empresa
+- [Insalubridade vs Periculosidade](https://morelliengenharia.com.br/blog/insalubridade-vs-periculosidade): Diferenças entre os adicionais
+- [Treinamentos obrigatórios](https://morelliengenharia.com.br/blog/treinamentos-obrigatorios): Quais a empresa deve realizar
+- [SESMT terceirizado](https://morelliengenharia.com.br/blog/sesmt-terceirizado): Solução para empresas de médio porte
+- [Riscos Psicossociais na NR-1](https://morelliengenharia.com.br/blog/riscos-psicossociais-nr-1): Obrigatoriedade, avaliação e implementação no PGR
 
 ## Contato
 

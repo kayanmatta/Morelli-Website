@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
+import { BrowserRouter, Outlet, Route, Routes, useLocation, useNavigate, useParams } from 'react-router'
 import Navbar from './components/Navbar'
 import LandingPage from './pages/LandingPage'
 import BlogPage from './pages/BlogPage'
+import ArticlePage from './pages/ArticlePage'
+import NotFoundPage from './pages/NotFoundPage'
 import TrainingsPage from './pages/TrainingsPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
+import { articles } from './data/articles'
 
 export type AppView =
   | { name: 'landing' }
@@ -14,36 +18,54 @@ export type AppView =
   | { name: 'privacy' }
   | { name: 'terms' }
 
-export default function App() {
-  const [view, setView] = useState<AppView>({ name: 'landing' })
+export const SITE_URL = 'https://morelliengenharia.com.br'
 
-  const navigate = (v: AppView) => {
-    setView(v)
-    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 10)
+function pathToView(pathname: string): AppView {
+  if (pathname === '/') return { name: 'landing' }
+  if (pathname === '/blog') return { name: 'blog' }
+  if (pathname.startsWith('/blog/')) {
+    const art = articles.find((a) => `/blog/${a.slug}` === pathname)
+    return art ? { name: 'article', id: art.id } : { name: 'blog' }
   }
+  if (pathname === '/treinamentos') return { name: 'trainings' }
+  if (pathname === '/privacidade') return { name: 'privacy' }
+  if (pathname === '/termos') return { name: 'terms' }
+  return { name: 'landing' }
+}
+
+/** Navegação por AppView (compatibilidade com os componentes existentes) */
+export function useAppNavigate() {
+  const navigate = useNavigate()
+  return (v: AppView) => {
+    if (v.name === 'article') {
+      const art = articles.find((a) => a.id === v.id)
+      navigate(art ? `/blog/${art.slug}` : '/blog')
+      return
+    }
+    const paths: Record<Exclude<AppView['name'], 'article'>, string> = {
+      landing: '/',
+      blog: '/blog',
+      trainings: '/treinamentos',
+      privacy: '/privacidade',
+      terms: '/termos',
+    }
+    navigate(paths[v.name])
+  }
+}
+
+function Shell() {
+  const { pathname } = useLocation()
+  const view = pathToView(pathname)
+  const onNavigate = useAppNavigate()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [pathname])
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar view={view} onNavigate={navigate} />
-      {view.name === 'landing' && (
-        <LandingPage
-          onBlogNav={() => navigate({ name: 'blog' })}
-          onArticleClick={(id) => navigate({ name: 'article', id })}
-          onNavigate={navigate}
-        />
-      )}
-      {(view.name === 'blog' || view.name === 'article') && (
-        <BlogPage view={view} onNavigate={navigate} />
-      )}
-      {view.name === 'trainings' && (
-        <TrainingsPage onNavigate={navigate} />
-      )}
-      {view.name === 'privacy' && (
-        <PrivacyPage onNavigate={navigate} />
-      )}
-      {view.name === 'terms' && (
-        <TermsPage onNavigate={navigate} />
-      )}
+      <Navbar view={view} onNavigate={onNavigate} />
+      <Outlet />
 
       {/* WhatsApp floating button */}
       <a
@@ -58,5 +80,61 @@ export default function App() {
         </svg>
       </a>
     </div>
+  )
+}
+
+function HomeRoute() {
+  const onNavigate = useAppNavigate()
+  return (
+    <LandingPage
+      onBlogNav={() => onNavigate({ name: 'blog' })}
+      onArticleClick={(id) => onNavigate({ name: 'article', id })}
+      onNavigate={onNavigate}
+    />
+  )
+}
+
+function BlogRoute() {
+  const onNavigate = useAppNavigate()
+  return <BlogPage onNavigate={onNavigate} />
+}
+
+function ArticleRoute() {
+  const { slug } = useParams<{ slug: string }>()
+  const article = articles.find((a) => a.slug === slug)
+  if (!article) return <NotFoundPage />
+  return <ArticlePage article={article} />
+}
+
+function TrainingsRoute() {
+  const onNavigate = useAppNavigate()
+  return <TrainingsPage onNavigate={onNavigate} />
+}
+
+function PrivacyRoute() {
+  const onNavigate = useAppNavigate()
+  return <PrivacyPage onNavigate={onNavigate} />
+}
+
+function TermsRoute() {
+  const onNavigate = useAppNavigate()
+  return <TermsPage onNavigate={onNavigate} />
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Shell />}>
+          <Route index element={<HomeRoute />} />
+          <Route path="/blog" element={<BlogRoute />} />
+          <Route path="/blog/:slug" element={<ArticleRoute />} />
+          <Route path="/treinamentos" element={<TrainingsRoute />} />
+          <Route path="/privacidade" element={<PrivacyRoute />} />
+          <Route path="/termos" element={<TermsRoute />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
