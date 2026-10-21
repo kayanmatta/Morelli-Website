@@ -4,15 +4,15 @@
 
 ## Serviços
 
-- [Higiene Ocupacional](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Avaliação de agentes físicos, químicos e biológicos
-- [Treinamentos NR](https://morelliengenharia1.kayan-devweb.workers.dev/#treinamentos): Capacitações conforme Normas Regulamentadoras
-- [Laudos Técnicos](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Insalubridade, periculosidade, LTCAT, PPP
-- [Gestão em SST](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): PGR, PCMSO, SESMT Terceirizado
-- [Riscos Psicossociais NR-1](https://morelliengenharia1.kayan-devweb.workers.dev/#servicos): Mapeamento e avaliação psicossocial com metodologia Demanda-Controle-Suporte
+- [Higiene Ocupacional](https://morelliengenharia.com.br/#servicos): Avaliação de agentes físicos, químicos e biológicos
+- [Treinamentos NR](https://morelliengenharia.com.br/#treinamentos): Capacitações conforme Normas Regulamentadoras
+- [Laudos Técnicos](https://morelliengenharia.com.br/#servicos): Insalubridade, periculosidade, LTCAT, PPP
+- [Gestão em SST](https://morelliengenharia.com.br/#servicos): PGR, PCMSO, SESMT Terceirizado
+- [Riscos Psicossociais NR-1](https://morelliengenharia.com.br/#servicos): Mapeamento e avaliação psicossocial com metodologia Demanda-Controle-Suporte
 
 ## Blog
 
-- [Blog e Artigos](https://morelliengenharia1.kayan-devweb.workers.dev/#blog): Conteúdo sobre segurança e saúde do trabalho
+- [Blog e Artigos](https://morelliengenharia.com.br/#blog): Conteúdo sobre segurança e saúde do trabalho
 
 ## Contato
 
