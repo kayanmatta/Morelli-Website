@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { AppView } from '../App'
 import logoHorizontal from '@/imports/logo_horizontal_morelli_page-0001.jpg'
 import logoWhite from '@/imports/Logo_sem_fundo.png'
@@ -11,6 +12,7 @@ interface Props {
 export default function Navbar({ view, onNavigate }: Props) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60)
@@ -32,13 +34,25 @@ export default function Navbar({ view, onNavigate }: Props) {
     }
   }
 
+  const scrollLink = (id: string) => (e: React.MouseEvent) => {
+    e.preventDefault()
+    scrollTo(id)
+  }
+
+  const goHome = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setMenuOpen(false)
+    navigate('/')
+    window.scrollTo({ top: 0 })
+  }
+
   const links = [
-    { label: 'Início', action: () => { onNavigate({ name: 'landing' }); setMenuOpen(false) } },
-    { label: 'Sobre', action: () => scrollTo('sobre') },
-    { label: 'Serviços', action: () => scrollTo('servicos') },
-    { label: 'Blog', action: () => { onNavigate({ name: 'blog' }); setMenuOpen(false) } },
-    { label: 'Treinamentos', action: () => { onNavigate({ name: 'trainings' }); setMenuOpen(false) } },
-    { label: 'Contato', action: () => scrollTo('contato') },
+    { label: 'Início', href: '/', onClick: goHome },
+    { label: 'Sobre', href: '/#sobre', onClick: scrollLink('sobre') },
+    { label: 'Serviços', href: '/#servicos', onClick: scrollLink('servicos') },
+    { label: 'Blog', href: '/blog', onClick: () => setMenuOpen(false) },
+    { label: 'Treinamentos', href: '/treinamentos', onClick: () => setMenuOpen(false) },
+    { label: 'Contato', href: '/#contato', onClick: scrollLink('contato') },
   ]
 
   return (
@@ -48,8 +62,9 @@ export default function Navbar({ view, onNavigate }: Props) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
-        <button
-          onClick={() => { onNavigate({ name: 'landing' }); setMenuOpen(false) }}
+        <Link
+          to="/"
+          onClick={goHome}
           className="flex-shrink-0 focus:outline-none"
         >
           {isDark ? (
@@ -57,26 +72,28 @@ export default function Navbar({ view, onNavigate }: Props) {
           ) : (
             <img src={logoHorizontal} alt="Morelli Engenharia" width={200} height={56} className="h-14 object-contain" />
           )}
-        </button>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
-            <button
+            <Link
               key={l.label}
-              onClick={l.action}
+              to={l.href}
+              onClick={l.onClick as React.MouseEventHandler<HTMLAnchorElement>}
               className={`font-josefin text-xs tracking-[0.2em] uppercase transition-colors duration-200 hover:text-brand-teal active:text-brand-teal-dark cursor-pointer ${
                 isDark ? 'text-white/90' : 'text-brand-gray'
               }`}
             >
               {l.label}
-            </button>
+            </Link>
           ))}
-          <button
-            onClick={() => scrollTo('contato')}
+          <Link
+            to="/#contato"
+            onClick={scrollLink('contato')}
             className="font-josefin text-xs tracking-[0.2em] uppercase px-6 py-2.5 bg-brand-teal text-white hover:bg-brand-teal-dark active:scale-95 transition-all duration-200 cursor-pointer"
           >
             Orçamento
-          </button>
+          </Link>
         </nav>
 
         <button
@@ -99,21 +116,23 @@ export default function Navbar({ view, onNavigate }: Props) {
       {menuOpen && (
         <div className="md:hidden bg-white border-t border-brand-light">
           {links.map((l) => (
-            <button
+            <Link
               key={l.label}
-              onClick={l.action}
+              to={l.href}
+              onClick={l.onClick as React.MouseEventHandler<HTMLAnchorElement>}
               className="block w-full text-left px-6 py-4 font-josefin text-xs tracking-[0.2em] uppercase text-brand-gray hover:text-brand-teal hover:bg-brand-cream active:bg-brand-cream/50 transition-colors cursor-pointer"
             >
               {l.label}
-            </button>
+            </Link>
           ))}
           <div className="px-6 py-4">
-            <button
-              onClick={() => scrollTo('contato')}
-              className="w-full bg-brand-teal text-white font-josefin text-xs tracking-[0.2em] uppercase py-3 hover:bg-brand-teal-dark active:scale-95 transition-all cursor-pointer"
+            <Link
+              to="/#contato"
+              onClick={scrollLink('contato')}
+              className="w-full bg-brand-teal text-white font-josefin text-xs tracking-[0.2em] uppercase py-3 hover:bg-brand-teal-dark active:scale-95 transition-all cursor-pointer block text-center"
             >
               Orçamento
-            </button>
+            </Link>
           </div>
         </div>
       )}

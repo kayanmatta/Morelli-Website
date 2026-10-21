@@ -1,4 +1,5 @@
 ﻿ import { useRef, useEffect, useState } from 'react'
+import { Head } from 'vite-react-ssg'
 import { AppView } from '../App'
 import { articles } from '../data/articles'
 
@@ -251,6 +252,20 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
 
   return (
     <main>
+      <Head>
+        <title>Morelli Engenharia | Segurança e Saúde do Trabalho</title>
+        <meta name="description" content="Engenharia e Assessoria em Segurança do Trabalho. PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado. Proteja sua empresa e seus colaboradores." />
+        <link rel="canonical" href="https://morelliengenharia.com.br/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Morelli Engenharia | Segurança e Saúde do Trabalho" />
+        <meta property="og:description" content="Engenharia e Assessoria em Segurança do Trabalho. PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado." />
+        <meta property="og:url" content="https://morelliengenharia.com.br/" />
+        <meta property="og:image" content="https://morelliengenharia.com.br/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Morelli Engenharia | Segurança e Saúde do Trabalho" />
+        <meta name="twitter:description" content="Engenharia e Assessoria em Segurança do Trabalho. PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado." />
+        <meta name="twitter:image" content="https://morelliengenharia.com.br/og-image.jpg" />
+      </Head>
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section
         id="hero"

@@ -1,27 +1,15 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
+import { Head } from 'vite-react-ssg'
 
 export default function NotFoundPage() {
   const navigate = useNavigate()
 
-  useEffect(() => {
-    document.title = 'Página não encontrada | Morelli Engenharia'
-    let robots = document.head.querySelector('meta[name="robots"]')
-    if (robots) robots.setAttribute('content', 'noindex')
-    else {
-      robots = document.createElement('meta')
-      robots.setAttribute('name', 'robots')
-      robots.setAttribute('content', 'noindex')
-      document.head.appendChild(robots)
-    }
-    return () => {
-      document.title = 'Morelli Engenharia | Segurança e Saúde do Trabalho'
-      if (robots) robots.setAttribute('content', 'index, follow')
-    }
-  }, [])
-
   return (
     <div className="pt-20 min-h-screen bg-white flex items-center justify-center">
+      <Head>
+        <title>Página não encontrada | Morelli Engenharia</title>
+        <meta name="robots" content="noindex" />
+      </Head>
       <div className="text-center px-8 py-24">
         <p className="font-josefin text-brand-teal text-xs tracking-[0.3em] uppercase mb-4">Erro 404</p>
         <h1 className="font-josefin text-brand-brown font-bold uppercase text-4xl md:text-5xl tracking-[0.06em]">

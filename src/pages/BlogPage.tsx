@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Head } from 'vite-react-ssg'
 import { AppView, SITE_URL } from '../App'
 import { articles } from '../data/articles'
 
@@ -24,29 +25,26 @@ interface Props {
 export default function BlogPage({ onNavigate }: Props) {
   const [activeCategory, setActiveCategory] = useState('Todos')
 
-  // SEO por página: title/canonical/description próprios da listagem
-  useEffect(() => {
-    document.title = 'Blog de Segurança e Saúde do Trabalho | Morelli Engenharia'
-    const desc = document.head.querySelector('meta[name="description"]')
-    if (desc) desc.setAttribute('content', 'Artigos sobre PGR, PCMSO, NRs, laudos técnicos e riscos psicossociais. Conteúdo especializado em Segurança e Saúde do Trabalho para sua empresa.')
-    const canonical = document.head.querySelector('link[rel="canonical"]')
-    if (canonical) canonical.setAttribute('href', `${SITE_URL}/blog`)
-    const ogUrl = document.head.querySelector('meta[property="og:url"]')
-    if (ogUrl) ogUrl.setAttribute('content', `${SITE_URL}/blog`)
-    return () => {
-      document.title = 'Morelli Engenharia | Segurança e Saúde do Trabalho'
-      if (canonical) canonical.setAttribute('href', `${SITE_URL}/`)
-      if (ogUrl) ogUrl.setAttribute('content', `${SITE_URL}/`)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   const filtered = activeCategory === 'Todos'
     ? articles
     : articles.filter((a) => a.category === activeCategory)
 
   return (
     <div className="pt-20 min-h-screen bg-white">
+      {/* Metadados desta URL (renderizados no build) */}
+      <Head>
+        <title>Blog de Segurança e Saúde do Trabalho | Morelli Engenharia</title>
+        <meta name="description" content="Artigos sobre PGR, PCMSO, NRs, laudos técnicos e riscos psicossociais. Conteúdo especializado em Segurança e Saúde do Trabalho para sua empresa." />
+        <link rel="canonical" href={`${SITE_URL}/blog`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Blog de Segurança e Saúde do Trabalho | Morelli Engenharia" />
+        <meta property="og:url" content={`${SITE_URL}/blog`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.jpg`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog de Segurança e Saúde do Trabalho | Morelli Engenharia" />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.jpg`} />
+      </Head>
+
       {/* Blog header */}
       <div className="relative py-24 bg-brand-brown overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-teal" />
@@ -116,7 +114,7 @@ export default function BlogPage({ onNavigate }: Props) {
                 <span className="text-brand-light text-xs font-josefin">{filtered[0].readTime} leitura</span>
               </div>
               <h2 className="font-josefin text-brand-brown font-bold uppercase text-xl leading-snug tracking-wide group-hover:text-brand-teal transition-colors">
-                {filtered[0].title}
+                <Link to={`/blog/${filtered[0].slug}`}>{filtered[0].title}</Link>
               </h2>
               <p className="mt-4 text-brand-gray text-sm leading-relaxed">{filtered[0].excerpt}</p>
               <div className="mt-6 flex items-center gap-2 font-josefin text-xs tracking-[0.15em] uppercase text-brand-teal">
@@ -154,7 +152,7 @@ export default function BlogPage({ onNavigate }: Props) {
                 <span className="text-brand-light text-xs">{art.readTime} leitura</span>
               </div>
               <h3 className="font-josefin text-brand-brown font-semibold uppercase text-base tracking-wide leading-snug group-hover:text-brand-teal transition-colors">
-                {art.title}
+                <Link to={`/blog/${art.slug}`}>{art.title}</Link>
               </h3>
               <p className="mt-3 text-brand-gray text-sm leading-relaxed line-clamp-3">{art.excerpt}</p>
               <div className="mt-4 flex items-center gap-2 font-josefin text-xs tracking-[0.15em] uppercase text-brand-teal">
@@ -183,19 +181,18 @@ export default function BlogPage({ onNavigate }: Props) {
 }
 
 export function BlogFooter() {
-  const navigate = useNavigate()
   return (
     <footer className="bg-brand-brown py-10">
       <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="font-josefin text-white/50 text-xs tracking-[0.15em] uppercase">
           © 2025-2026 Morelli Engenharia e Assessoria em Segurança do Trabalho
         </p>
-        <button
-          onClick={() => navigate('/')}
+        <Link
+          to="/"
           className="font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal border border-brand-teal px-6 py-2.5 hover:bg-brand-teal hover:text-white active:scale-95 transition-all cursor-pointer"
         >
           ← Voltar ao site
-        </button>
+        </Link>
       </div>
     </footer>
   )

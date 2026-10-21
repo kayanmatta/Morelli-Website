@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Outlet, Route, Routes, useLocation, useNavigate, useParams } from 'react-router'
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom'
+import type { RouteRecord } from 'vite-react-ssg'
 import Navbar from './components/Navbar'
 import LandingPage from './pages/LandingPage'
 import BlogPage from './pages/BlogPage'
@@ -54,13 +55,20 @@ export function useAppNavigate() {
 }
 
 function Shell() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   const view = pathToView(pathname)
   const onNavigate = useAppNavigate()
 
   useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1))
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100)
+        return
+      }
+    }
     window.scrollTo({ top: 0 })
-  }, [pathname])
+  }, [pathname, hash])
 
   return (
     <div className="min-h-screen bg-white">
@@ -121,20 +129,23 @@ function TermsRoute() {
   return <TermsPage onNavigate={onNavigate} />
 }
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Shell />}>
-          <Route index element={<HomeRoute />} />
-          <Route path="/blog" element={<BlogRoute />} />
-          <Route path="/blog/:slug" element={<ArticleRoute />} />
-          <Route path="/treinamentos" element={<TrainingsRoute />} />
-          <Route path="/privacidade" element={<PrivacyRoute />} />
-          <Route path="/termos" element={<TermsRoute />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  )
-}
+export const routes: RouteRecord[] = [
+  {
+    path: '/',
+    element: <Shell />,
+    children: [
+      { index: true, Component: HomeRoute },
+      { path: 'blog', Component: BlogRoute },
+      {
+        path: 'blog/:slug',
+        Component: ArticleRoute,
+        getStaticPaths: () => articles.map((a) => `blog/${a.slug}`),
+      },
+      { path: 'treinamentos', Component: TrainingsRoute },
+      { path: 'privacidade', Component: PrivacyRoute },
+      { path: 'termos', Component: TermsRoute },
+      { path: '404', Component: NotFoundPage },
+      { path: '*', Component: NotFoundPage },
+    ],
+  },
+]

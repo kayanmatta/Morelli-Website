@@ -1,3 +1,4 @@
+import { Head } from 'vite-react-ssg'
 import { AppView } from '../App'
 
 interface Props {
@@ -7,6 +8,11 @@ interface Props {
 export default function PrivacyPage({ onNavigate }: Props) {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <Head>
+        <title>Política de Privacidade | Morelli Engenharia</title>
+        <meta name="robots" content="noindex" />
+        <link rel="canonical" href="https://morelliengenharia.com.br/privacidade" />
+      </Head>
       <div className="max-w-4xl mx-auto px-8 py-16">
         <button
           onClick={() => onNavigate({ name: 'landing' })}

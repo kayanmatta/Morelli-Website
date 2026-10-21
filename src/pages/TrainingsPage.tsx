@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Head } from 'vite-react-ssg'
 import { AppView } from '../App'
 import { trainingCategories, totalCourses } from '../data/trainings'
 
@@ -12,6 +13,15 @@ interface Props {
 export default function TrainingsPage({ onNavigate }: Props) {
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <Head>
+        <title>Treinamentos NR | Morelli Engenharia</title>
+        <meta name="description" content="Mais de 80 treinamentos certificados conforme as Normas Regulamentadoras: NR-35, NR-33, NR-10, NR-20, brigada de incêndio, primeiros socorros e mais." />
+        <link rel="canonical" href="https://morelliengenharia.com.br/treinamentos" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Treinamentos NR | Morelli Engenharia" />
+        <meta property="og:url" content="https://morelliengenharia.com.br/treinamentos" />
+        <meta property="og:image" content="https://morelliengenharia.com.br/og-image.jpg" />
+      </Head>
       {/* Header */}
       <div className="relative py-24 bg-brand-brown overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-teal" />

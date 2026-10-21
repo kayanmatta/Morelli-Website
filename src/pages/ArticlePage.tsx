@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router-dom'
+import { Head } from 'vite-react-ssg'
 import type { Article } from '../data/articles'
 import { articles } from '../data/articles'
 import { SITE_URL } from '../App'
@@ -27,41 +27,6 @@ export default function ArticlePage({ article }: Props) {
   const ogImageUrl = `${SITE_URL}/og-image.jpg`
   const paragraphs = article.content.split('\n\n').filter(Boolean)
 
-  // Atualiza title/canonical/metadados da própria URL (SEO por página)
-  useEffect(() => {
-    document.title = `${article.title} | Morelli Engenharia`
-
-    const update = (selector: string, apply: (el: HTMLMetaElement) => void) => {
-      const el = document.head.querySelector(selector) as HTMLMetaElement | null
-      if (el) apply(el)
-    }
-
-    update('meta[name="description"]', (el) => el.setAttribute('content', article.excerpt))
-    update('meta[property="og:title"]', (el) => el.setAttribute('content', article.title))
-    update('meta[property="og:description"]', (el) => el.setAttribute('content', article.excerpt))
-    update('meta[property="og:url"]', (el) => el.setAttribute('content', canonicalUrl))
-    update('meta[property="og:type"]', (el) => el.setAttribute('content', 'article'))
-    update('meta[name="twitter:title"]', (el) => el.setAttribute('content', article.title))
-    update('meta[name="twitter:description"]', (el) => el.setAttribute('content', article.excerpt))
-
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
-    if (!canonical) {
-      canonical = document.createElement('link')
-      canonical.rel = 'canonical'
-      document.head.appendChild(canonical)
-    }
-    canonical.href = canonicalUrl
-
-    return () => {
-      document.title = 'Morelli Engenharia | Segurança e Saúde do Trabalho'
-      const c = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
-      if (c) c.href = `${SITE_URL}/`
-      update('meta[property="og:type"]', (el) => el.setAttribute('content', 'website'))
-      update('meta[property="og:url"]', (el) => el.setAttribute('content', `${SITE_URL}/`))
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [article.slug])
-
   const blogPostingSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -82,6 +47,23 @@ export default function ArticlePage({ article }: Props) {
 
   return (
     <div className="pt-20 min-h-screen bg-white">
+      {/* Metadados desta URL (renderizados no build) */}
+      <Head>
+        <title>{`${article.title} | Morelli Engenharia`}</title>
+        <meta name="description" content={article.excerpt} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.excerpt} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="article:published_time" content={article.dateISO} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={article.title} />
+        <meta name="twitter:description" content={article.excerpt} />
+        <meta name="twitter:image" content={ogImageUrl} />
+      </Head>
+
       {/* Schema.org BlogPosting */}
       <script
         type="application/ld+json"
@@ -117,13 +99,13 @@ export default function ArticlePage({ article }: Props) {
       {/* Breadcrumb */}
       <div className="border-b border-brand-light/50">
         <div className="max-w-4xl mx-auto px-8 py-4 flex items-center gap-2 text-xs font-josefin tracking-wider text-brand-light">
-          <button onClick={() => navigate('/')} className="hover:text-brand-teal active:text-brand-teal-dark transition-colors cursor-pointer">
+          <Link to="/" className="hover:text-brand-teal active:text-brand-teal-dark transition-colors">
             Início
-          </button>
+          </Link>
           <span>/</span>
-          <button onClick={() => navigate('/blog')} className="hover:text-brand-teal active:text-brand-teal-dark transition-colors cursor-pointer">
+          <Link to="/blog" className="hover:text-brand-teal active:text-brand-teal-dark transition-colors">
             Blog
-          </button>
+          </Link>
           <span>/</span>
           <span className="text-brand-gray truncate max-w-xs">{article.title}</span>
         </div>
@@ -219,12 +201,12 @@ export default function ArticlePage({ article }: Props) {
         </div>
 
         {/* Back to blog */}
-        <button
-          onClick={() => navigate('/blog')}
-          className="mt-10 flex items-center gap-2 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal hover:gap-3 active:opacity-50 transition-all cursor-pointer"
+        <Link
+          to="/blog"
+          className="mt-10 inline-flex items-center gap-2 font-josefin text-xs tracking-[0.2em] uppercase text-brand-teal hover:gap-3 active:opacity-50 transition-all"
         >
           ← Voltar ao blog
-        </button>
+        </Link>
       </article>
 
       {/* Related articles */}
@@ -257,7 +239,7 @@ export default function ArticlePage({ article }: Props) {
                       {a.category}
                     </span>
                     <h3 className="mt-2 font-josefin text-brand-brown font-semibold text-xs uppercase tracking-wide leading-snug group-hover:text-brand-teal transition-colors">
-                      {a.title}
+                      <Link to={`/blog/${a.slug}`}>{a.title}</Link>
                     </h3>
                   </div>
                 </article>
