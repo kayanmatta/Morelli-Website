@@ -49,7 +49,7 @@ export default function Navbar({ view, onNavigate }: Props) {
   const links = [
     { label: 'Início', href: '/', onClick: goHome },
     { label: 'Sobre', href: '/#sobre', onClick: scrollLink('sobre') },
-    { label: 'Serviços', href: '/#servicos', onClick: scrollLink('servicos') },
+    { label: 'Serviços', href: '/servicos', onClick: () => setMenuOpen(false) },
     { label: 'Blog', href: '/blog', onClick: () => setMenuOpen(false) },
     { label: 'Treinamentos', href: '/treinamentos', onClick: () => setMenuOpen(false) },
     { label: 'Contato', href: '/#contato', onClick: scrollLink('contato') },

@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage'
 import BlogPage from './pages/BlogPage'
 import ArticlePage from './pages/ArticlePage'
 import NotFoundPage from './pages/NotFoundPage'
+import ServicesPage from './pages/ServicesPage'
 import TrainingsPage from './pages/TrainingsPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
@@ -24,6 +25,7 @@ export const SITE_URL = 'https://morelliengenharia.com.br'
 function pathToView(pathname: string): AppView {
   if (pathname === '/') return { name: 'landing' }
   if (pathname === '/blog') return { name: 'blog' }
+  if (pathname === '/servicos') return { name: 'blog' }
   if (pathname.startsWith('/blog/')) {
     const art = articles.find((a) => `/blog/${a.slug}` === pathname)
     return art ? { name: 'article', id: art.id } : { name: 'blog' }
@@ -141,6 +143,7 @@ export const routes: RouteRecord[] = [
         Component: ArticleRoute,
         getStaticPaths: () => articles.map((a) => `blog/${a.slug}`),
       },
+      { path: 'servicos', Component: ServicesPage },
       { path: 'treinamentos', Component: TrainingsRoute },
       { path: 'privacidade', Component: PrivacyRoute },
       { path: 'termos', Component: TermsRoute },

@@ -22,6 +22,7 @@ export default defineConfig({
       '/',
       '/blog',
       ...articles.map((a) => `/blog/${a.slug}`),
+      '/servicos',
       '/treinamentos',
       '/privacidade',
       '/termos',

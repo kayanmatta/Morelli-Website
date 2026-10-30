@@ -4,11 +4,16 @@
 
 ## Serviços
 
-- [Higiene Ocupacional](https://morelliengenharia.com.br/#servicos): Avaliação de agentes físicos, químicos e biológicos
-- [Treinamentos NR](https://morelliengenharia.com.br/#treinamentos): Capacitações conforme Normas Regulamentadoras
-- [Laudos Técnicos](https://morelliengenharia.com.br/#servicos): Insalubridade, periculosidade, LTCAT, PPP
-- [Gestão em SST](https://morelliengenharia.com.br/#servicos): PGR, PCMSO, SESMT Terceirizado
-- [Riscos Psicossociais NR-1](https://morelliengenharia.com.br/#servicos): Mapeamento e avaliação psicossocial com metodologia Demanda-Controle-Suporte
+Página completa: https://morelliengenharia.com.br/servicos
+
+- [Engenharia de Segurança do Trabalho](https://morelliengenharia.com.br/servicos#engenharia-seguranca-trabalho): GRO, PGR, LTCAT, laudos NR-10/NR-12/NR-15/NR-16 e eSocial
+- [Higiene Ocupacional](https://morelliengenharia.com.br/servicos#higiene-ocupacional): Avaliações de ruído, calor, químicos e vibração conforme NHOs e NR-15
+- [Saúde Ocupacional](https://morelliengenharia.com.br/servicos#saude-ocupacional): PCMSO (NR-7), PCA, audiometria, exames e assessoria médica
+- [Riscos Psicossociais NR-1](https://morelliengenharia.com.br/servicos#riscos-psicossociais): Mapeamento e avaliação psicossocial com metodologia Demanda-Controle-Suporte
+- [Treinamentos NR](https://morelliengenharia.com.br/servicos#treinamentos-nr): Universidade Morelli — cursos EAD e presenciais conforme NR-01
+- [Perícia Judicial](https://morelliengenharia.com.br/servicos#pericia-judicial): Assessoria técnica a departamentos jurídicos e RH em processos trabalhistas
+- [Gestão e Assessoria em SST](https://morelliengenharia.com.br/servicos#gestao-sst): SESMT terceirizado, CIPA, AVCB e plataforma digital SOC
+- [Meio Ambiente](https://morelliengenharia.com.br/servicos#meio-ambiente): Licenciamento CETESB/IBAMA, resíduos, CADRI, PGRSS e NBR 10151
 
 ## Treinamentos
 

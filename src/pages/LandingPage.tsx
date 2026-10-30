@@ -253,17 +253,17 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
   return (
     <main>
       <Head>
-        <title>Morelli Engenharia | Segurança e Saúde do Trabalho</title>
-        <meta name="description" content="Engenharia e Assessoria em Segurança do Trabalho. PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado. Proteja sua empresa e seus colaboradores." />
+        <title>Morelli Engenharia | Segurança do Trabalho em São José dos Campos</title>
+        <meta name="description" content="Engenharia e Assessoria em Segurança do Trabalho em São José dos Campos e Vale do Paraíba. PGR, PCMSO, Laudos Técnicos (LTCAT, insalubridade, periculosidade), Treinamentos NR e SESMT Terceirizado. Proteja sua empresa e seus colaboradores." />
         <link rel="canonical" href="https://morelliengenharia.com.br/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Morelli Engenharia | Segurança e Saúde do Trabalho" />
-        <meta property="og:description" content="Engenharia e Assessoria em Segurança do Trabalho. PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado." />
+        <meta property="og:title" content="Morelli Engenharia | Segurança do Trabalho em São José dos Campos" />
+        <meta property="og:description" content="PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado em São José dos Campos e região. Mais de 10 anos de experiência." />
         <meta property="og:url" content="https://morelliengenharia.com.br/" />
         <meta property="og:image" content="https://morelliengenharia.com.br/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Morelli Engenharia | Segurança e Saúde do Trabalho" />
-        <meta name="twitter:description" content="Engenharia e Assessoria em Segurança do Trabalho. PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado." />
+        <meta name="twitter:title" content="Morelli Engenharia | Segurança do Trabalho em São José dos Campos" />
+        <meta name="twitter:description" content="PGR, PCMSO, Laudos Técnicos, Treinamentos NR e SESMT Terceirizado em São José dos Campos e região." />
         <meta name="twitter:image" content="https://morelliengenharia.com.br/og-image.jpg" />
       </Head>
       {/* ── HERO ─────────────────────────────────────────────────────── */}

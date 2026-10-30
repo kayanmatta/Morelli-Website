@@ -55,6 +55,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://morelliengenharia.com.br/servicos</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://morelliengenharia.com.br/treinamentos</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
