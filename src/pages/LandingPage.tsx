@@ -12,6 +12,11 @@ import jeanEdgarImg from '@/imports/Jeane&Edgar.jpg'
 import saudeImg from '@/imports/saude-ocupacional.png'
 import logoWhite from '@/imports/Logo_sem_fundo.png'
 
+// Site Key pública do Cloudflare Turnstile (widget "morelli-form")
+const TURNSTILE_SITE_KEY = '0x4AAAAAAF1PHboaLYiqhBpp'
+// Worker que valida o Turnstile e repassa ao Web3Forms (access key fica oculta)
+const FORM_GATEWAY_URL = 'https://morelli-form-gateway.kayan-devweb.workers.dev/submit'
+
 import logoVanguardia from '@/imports/empresas/VANGUARDA-LOGO.svg'
 import logoPetrobras from '@/imports/empresas/Petrobras1.svg'
 import logoTrelleborg from '@/imports/empresas/LOGO-TELLEBORG.svg'
@@ -113,6 +118,38 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
   const [honeypot, setHoneypot] = useState('')
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const turnstileRef = useRef<HTMLDivElement>(null)
+
+  // Cloudflare Turnstile (proteção do formulário contra spam)
+  useEffect(() => {
+    const el = turnstileRef.current
+    if (!el) return
+    const w = window as any
+    const render = () => {
+      if (w.turnstile && !el.dataset.rendered) {
+        w.turnstile.render(el, {
+          sitekey: TURNSTILE_SITE_KEY,
+          theme: 'light',
+          size: 'normal',
+          callback: (token: string) => setTurnstileToken(token),
+          'expired-callback': () => setTurnstileToken(''),
+          'error-callback': () => setTurnstileToken(''),
+        })
+        el.dataset.rendered = '1'
+      }
+    }
+    if (!document.getElementById('cf-turnstile-js')) {
+      const s = document.createElement('script')
+      s.id = 'cf-turnstile-js'
+      s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+      s.async = true
+      s.onload = render
+      document.head.appendChild(s)
+    } else {
+      render()
+    }
+  }, [])
 
   const heroRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -137,19 +174,17 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
       return
     }
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(FORM_GATEWAY_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: 'a42e2e59-7bc7-425d-8404-2bcc4315b4a6',
-          subject: `📋 Orçamento - ${formData.nome || 'Novo contato'}`,
-          from_name: 'Morelli Engenharia',
-          Nome: formData.nome,
-          Empresa: formData.empresa || 'Não informada',
-          Email: formData.email,
-          Telefone: formData.telefone || 'Não informado',
-          Mensagem: formData.mensagem,
+          nome: formData.nome,
+          empresa: formData.empresa || 'Não informada',
+          email: formData.email,
+          telefone: formData.telefone || 'Não informado',
+          mensagem: formData.mensagem,
           botcheck: honeypot,
+          token: turnstileToken,
         }),
       })
       const json = await res.json()
@@ -754,6 +789,7 @@ export default function LandingPage({ onBlogNav, onArticleClick, onNavigate }: P
                     style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
                     aria-hidden="true"
                   />
+                  <div ref={turnstileRef} className="cf-turnstile mb-4 flex justify-center" />
                   <button
                     type="submit"
                     disabled={sending}
